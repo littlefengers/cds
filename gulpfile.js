@@ -314,10 +314,10 @@ var watchSource = function (done) {
 exports.default = series(
 	cleanDist,
 	parallel(
-		buildScripts,
+		// buildScripts,
 		// lintScripts,
 		buildStyles,
-		copyTokens,
+		// copyTokens,
 		// buildSVGs,
 		copyFiles
 	)
@@ -330,3 +330,5 @@ exports.watch = series(
 	startServer,
 	watchSource
 );
+
+exports.copyTokens = series(copyTokens);

@@ -41,6 +41,38 @@
   } 
 }
 
+// @mixin u-button($color-text,$color-bg, $cololr-bg-hover, $color-bg-focus, $border-width, $height, $border-radius,) {
+//   color: $color-text;
+//   background-color: $color-bg;
+//   border: $border-width solid;
+//   border-radius: $border-radius;
+//   height: $height;
+//   &:hover {
+//     background-color:$color-bg-hover;
+//   }
+//   &:focus {
+//     background-color:$color-bg-focus;
+//   }
+// }
+// $cds-buttons-color-primary-default-background: #3071a9; // alias of color.blue-500
+// $cds-buttons-color-primary-focus-background: #2a6293; // alias of color.blue-700
+// $cds-buttons-color-primary-hover-background: #2a6293; // alias of color.blue-700
+// $cds-buttons-color-primary-text: #0060a9; // alias of color.blue-600
+// .new-button
+// {
+//   @include()
+// }
+
+@mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
+{
+  font-size:$font-size-mobile;
+	line-height:$font-line-height-mobile;
+	@media (min-width: $bp) {
+		font-size:$font-size-desktop;
+		line-height:$font-line-height-desktop;
+	}
+}
+
 
 .u-center
 {

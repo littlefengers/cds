@@ -77,4 +77,103 @@ h4, .t4
 	text-decoration: line-through;
 }
 
+//CHD Fonts
 
+
+@mixin cds-typeMaker($componenet-variant)
+{
+	font-size: unquote($componenet-variant+-mobile-size);
+	line-height: $componenet-variant+-mobile-line-height;
+}
+
+.cds-testMaker
+{
+ @include cds-typeMaker("$cds-type-font-t1");
+}
+
+
+.cds-t1-test
+{
+	@include u-text-styles($cds-type-font-t1-desktop-size,$cds-type-font-t1-desktop-line-height, $cds-type-font-t1-mobile-size,$cds-type-font-t1-mobile-line-height,$screen-lg-min)
+}
+
+.cds-t1
+{
+	font-size:$cds-type-font-t1-mobile-size;
+	line-height:$cds-type-font-t1-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t1-desktop-size;
+		line-height:$cds-type-font-t1-desktop-line-height;
+	}
+}
+
+
+.cds-t2
+{
+	font-size:$cds-type-font-t2-mobile-size;
+	line-height:$cds-type-font-t2-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t2-desktop-size;
+		line-height:$cds-type-font-t2-desktop-line-height;
+	}
+}
+
+.cds-t3
+{
+	font-size:$cds-type-font-t3-mobile-size;
+	line-height:$cds-type-font-t3-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t3-desktop-size;
+		line-height:$cds-type-font-t3-desktop-line-height;
+	}
+}
+
+.cds-t4
+{
+	font-size:$cds-type-font-t4-mobile-size;
+	line-height:$cds-type-font-t4-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t4-desktop-size;
+		line-height:$cds-type-font-t4-desktop-line-height;
+	}
+}
+
+.cds-t5
+{
+	font-size:$cds-type-font-t5-mobile-size;
+	line-height:$cds-type-font-t5-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t5-desktop-size;
+		line-height:$cds-type-font-t5-desktop-line-height;
+	}
+}
+
+.cds-t6
+{
+	font-size:$cds-type-font-t6-mobile-size;
+	line-height:$cds-type-font-t6-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t6-desktop-size;
+		line-height:$cds-type-font-t6-desktop-line-height;
+	}
+}
+
+.cds-t7
+{
+	font-size:$cds-type-font-t7-mobile-size;
+	line-height:$cds-type-font-t7-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-t7-desktop-size;
+		line-height:$cds-type-font-t7-desktop-line-height;
+	}
+}
+
+.cds-body-copy
+{
+	font-size:$cds-type-font-body-copy-mobile-size;
+	line-height:$cds-type-font-body-copy-mobile-line-height;
+	@media (min-width: $screen-lg-min) {
+		font-size:$cds-type-font-body-copy-desktop-size;
+		line-height:$cds-type-font-body-copy-desktop-line-height;
+	}
+}
