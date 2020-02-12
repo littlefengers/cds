@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html {}
+
+body {
+    @include t-bodyFont;
+    color: $bodyGrey;
+    background-color: $bg;
+}
+
+body, html {}
+
+a {
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+        color: $blue--hover;
+    }
+}
+
+p {
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+    vertical-align: middle;
+}

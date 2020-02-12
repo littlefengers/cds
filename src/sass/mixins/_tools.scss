@@ -1,0 +1,49 @@
+@function px-to-em($px, $base: 16px) {
+    @return $px / $base * 1em;
+}
+
+
+@mixin u-center()
+{
+	margin: 0 auto;
+}
+
+@mixin u-removeLeftMargins
+{
+	margin-left: 0;
+}
+
+@mixin u-removeRightMargins
+{
+	margin-right: 0;
+}
+
+@mixin u-divider
+{
+	border-bottom: 1px solid $borderGrey !important;
+}
+
+@mixin u-button($bg) {
+  color: #fff;
+  border: none;
+  padding-top:px-to-em(12px);
+  padding-bottom:px-to-em(12px);
+  padding-left: px-to-em(32px);
+  padding-right: px-to-em(32px);
+  background: $bg;
+  text-transform: uppercase;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+}
+
+
+.u-center
+{
+	@include u-center;
+	text-align:center;
+}

@@ -1,0 +1,80 @@
+@mixin t-headerFont
+{
+	font-family: "soleil", helvetica, arial, sans-serif;
+	font-weight: 500;
+	line-height:1em;
+}
+
+@mixin t-bodyFont
+{
+	font-family: "freight-sans-pro", helvetica, arial, sans-serif;
+	font-size: px-to-em(18px);
+	line-height: 1.5em;
+	font-style:normal;
+	font-weight: 400;
+}
+
+@mixin t-bold
+{
+	font-weight:500;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	@include t-headerFont;
+	margin-top:0; //Added this for collapsed margins
+}
+
+h1, .t1
+{    
+	font-size: px-to-em(48px);
+	margin-bottom: px-to-em(18px);
+
+	@include media(≤medium)
+	{
+		font-size: px-to-em(48px*.75);
+	}
+}
+
+h2, .t2
+{
+	font-size: px-to-em(34px);
+	margin-bottom: px-to-em(14px);
+}
+
+h3, .t3
+{
+	font-size: px-to-em(28px);
+	margin-bottom: px-to-em(12px);
+}
+
+h4, .t4
+{
+	font-size: px-to-em(24px);
+	margin-bottom: px-to-em(12px);
+}
+
+.t-introText
+{
+	@include t-bodyFont;
+	font-size: px-to-em(22px);
+}
+
+.t-label
+{
+	@include t-bodyFont;
+	color: $bodyGrey__lighter;
+}
+
+.t2__lessMargin
+{
+	font-size: px-to-em(34px);
+	margin-bottom: px-to-em(4px);
+}
+
+.t-strike
+{
+	text-decoration: line-through;
+}
+
+

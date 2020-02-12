@@ -1,0 +1,32 @@
+input, label, textarea
+{
+	display:block;
+	margin-bottom: 1em
+}
+
+input[type="text"], input[type="email"]
+{
+	height: px-to-em(36px);
+	padding: px-to-em(8px);
+}
+
+textarea
+{
+	padding: px-to-em(8px);
+}
+
+
+.o-input--half
+{
+	width: 50%;
+	@include media("<medium")
+	{
+		width: 100%;
+	}
+
+}
+
+.o-input--full
+{
+	width: 100%;
+}

@@ -1,0 +1,18 @@
+//Colors
+
+$base : #F7F6F0;
+$darken : darken(#F7F6F0 , 30%);
+$back: darken(#F7F6F0, 40%);
+
+
+$headerGrey: #494949;
+$bodyGrey: #4A4A4A;
+$bodyGrey__lighter: #878787;
+$barGrey: rgba($bodyGrey, .1);
+$borderGrey: rgba(151, 151,151, .40);
+
+$bg: #F7F7F7;
+
+
+$blue: #217FBE;
+$blue--hover: lighten($blue, 15%);

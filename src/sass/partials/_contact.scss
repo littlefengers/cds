@@ -1,0 +1,13 @@
+.c-contactForm__item
+{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.c-contactForm__submit
+{
+	@include media("<small")
+	{
+		width: 100%;
+	}
+}
