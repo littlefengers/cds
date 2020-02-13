@@ -7,9 +7,9 @@
 
 @mixin t-bodyFont
 {
-	font-family: "freight-sans-pro", helvetica, arial, sans-serif;
-	font-size: px-to-em(18px);
-	line-height: 1.5em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	// font-size: px-to-em(18px);
+	// line-height: 1.5em;
 	font-style:normal;
 	font-weight: 400;
 }
@@ -23,35 +23,6 @@ h1, h2, h3, h4, h5, h6
 {
 	@include t-headerFont;
 	margin-top:0; //Added this for collapsed margins
-}
-
-h1, .t1
-{    
-	font-size: px-to-em(48px);
-	margin-bottom: px-to-em(18px);
-
-	@include media(≤medium)
-	{
-		font-size: px-to-em(48px*.75);
-	}
-}
-
-h2, .t2
-{
-	font-size: px-to-em(34px);
-	margin-bottom: px-to-em(14px);
-}
-
-h3, .t3
-{
-	font-size: px-to-em(28px);
-	margin-bottom: px-to-em(12px);
-}
-
-h4, .t4
-{
-	font-size: px-to-em(24px);
-	margin-bottom: px-to-em(12px);
 }
 
 .t-introText
@@ -91,6 +62,16 @@ h4, .t4
  @include cds-typeMaker("$cds-type-font-t1");
 }
 
+
+@function makingText($styleName)
+{
+	@return "$"+$styleName+"desktop-size";
+}
+
+.cds-t1-test2
+{
+	font-size: makingText("$cds-type-font-t1");
+}
 
 .cds-t1-test
 {

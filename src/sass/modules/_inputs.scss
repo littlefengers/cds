@@ -14,19 +14,3 @@ textarea
 {
 	padding: px-to-em(8px);
 }
-
-
-.o-input--half
-{
-	width: 50%;
-	@include media("<medium")
-	{
-		width: 100%;
-	}
-
-}
-
-.o-input--full
-{
-	width: 100%;
-}

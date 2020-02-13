@@ -40,8 +40,8 @@ var paths = {
 		output: 'dist/'
 	},
 	designtokens: {
-		input: '../costcodesigntokens/build/**/*',
-		output: 'src/sass/modules/'
+		input: '../costco-design-tokens/build/**/*',
+		output: 'src/'
 	}, 
 	reload: './dist/'
 };
@@ -91,6 +91,7 @@ var uglify = require('gulp-terser');
 var optimizejs = require('gulp-optimize-js');
 
 // Styles
+var Fiber = require("fibers");
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var prefix = require('autoprefixer');
@@ -101,6 +102,9 @@ var svgmin = require('gulp-svgmin');
 
 // BrowserSync
 var browserSync = require('browser-sync');
+
+//Sass options
+sass.compiler = require('sass');
 
 
 /**
@@ -203,7 +207,8 @@ var buildStyles = function (done) {
 	return src(paths.styles.input)
 		.pipe(sass({
 			outputStyle: 'expanded',
-			sourceComments: true
+			sourceComments: true,
+			fiber: Fiber
 		}))
 		// .pipe(prefix({
 		// 	cascade: true,

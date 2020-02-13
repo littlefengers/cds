@@ -13,3 +13,10 @@
   color: #fff;
   text-shadow: none;
 }
+
+
+//Playing with colors
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+
+@debug map.get($font-weights, "regular");
