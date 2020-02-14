@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Thu, 13 Feb 2020 20:04:21 GMT
+  Generated on Fri, 14 Feb 2020 20:20:21 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -117,13 +117,16 @@ $cds-buttons-color-secondary-text: #0060a9 !default; // alias of color.blue-600
 $cds-buttons-color-outline-primary-default-background: #ffffff !default; // alias of color.white
 $cds-buttons-color-outline-primary-focus-background: #eeeeee !default; // alias of color.gray-200
 $cds-buttons-color-outline-primary-hover-background: #eeeeee !default; // alias of color.gray-200
+$cds-buttons-color-outline-primary-border: #3071a9 !default; // alias of color.blue-500
 $cds-buttons-color-outline-primary-text: #0060a9 !default; // alias of color.blue-600
 $cds-buttons-size-height: 40px !default;
+$cds-buttons-size-width: 100%px !default;
+$cds-buttons-size-border-width: 0px !default;
 $cds-buttons-size-outline-primary-border-width: 1px !default;
 $cds-buttons-radius: 3px !default;
 $cds-buttons-font-size: 16px !default;
 
-$tokens: (
+$cds-tokens: (
   'bp': (
     'sm': $cds-bp-sm,
     'md': $cds-bp-md,
@@ -328,11 +331,14 @@ $tokens: (
         'hover': (
           'background': $cds-buttons-color-outline-primary-hover-background
         ),
+        'border': $cds-buttons-color-outline-primary-border,
         'text': $cds-buttons-color-outline-primary-text
       )
     ),
     'size': (
       'height': $cds-buttons-size-height,
+      'width': $cds-buttons-size-width,
+      'border-width': $cds-buttons-size-border-width,
       'outline-primary': (
         'border-width': $cds-buttons-size-outline-primary-border-width
       )

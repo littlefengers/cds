@@ -23,45 +23,26 @@
 	border-bottom: 1px solid $borderGrey !important;
 }
 
-// @mixin u-button($bg) {
-//   color: #fff;
-//   border: none;
-//   padding-top:px-to-em(12px);
-//   padding-bottom:px-to-em(12px);
-//   padding-left: px-to-em(32px);
-//   padding-right: px-to-em(32px);
-//   background: $bg;
-//   text-transform: uppercase;
-//   &:hover {
-//     background:darken($bg,8%);
-//     transition: all 0.3s ease;
-//   }
-//   &:active {
-//     background:darken($bg,25%);
-//   } 
-// }
+//TODO Need to remove the 0 after the PX
 
-@mixin u-button($font-size, $color-text,$color-bg, $color-bg-hover, $color-bg-focus, $border-width:1px, $height:40px, $width:100%, $border-radius:3px) {
-  color: $color-text;
-  background-color: $color-bg;
-  border: $border-width solid;
-  border-radius: $border-radius;
-  height: $height;
-  width: $width; //defaults to 100% of parent
-  font-size: $font-size;
+@mixin u-button-tokens($token-map,$variant) {
+  color: get-deepest-token($token-map, "buttons", "color", $variant, "","text");
+  background-color: get-deepest-token($token-map, "buttons", "color", $variant, "default","background");
+  border: get-deepest-token($token-map, "buttons", "size", $variant, "","border-width") solid;
+  border-radius: map-get-deep($token-map,"buttons","radius");   //TODO: need to fix deepest to work with this
+  height: get-deepest-token($token-map, "buttons", "size", $variant, "","height");
+  width: get-deepest-token($token-map, "buttons", "size", $variant, "","width");
+  font-size: map-get-deep($token-map,"buttons","font","size"); //TODO: need to fix deepest to work with this
   cursor: pointer;
   vertical-align: middle;
   &:hover {
-    background-color:$color-bg-hover;
+    background-color: get-deepest-token($token-map, "buttons", "color", $variant, "hover","background");
   }
   &:focus {
-    background-color:$color-bg-focus;
+    background-color: get-deepest-token($token-map, "buttons", "color", $variant, "focus","background");
   }
 }
-.new-button
-{
-  @include u-button($cds-buttons-font-size,$cds-buttons-color-primary-text,$cds-buttons-color-primary-default-background, $cds-buttons-color-primary-hover-background, $cds-buttons-color-primary-focus-background)
-}
+
 
 @mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
 {
@@ -73,9 +54,12 @@
 	}
 }
 
-
-.u-center
+@mixin fontSize($fontSize)
 {
-	@include u-center;
-	text-align:center;
-}
+  font-size: u-get-font-size($fontSize);
+};
+
+@mixin lineHeight($lineHeight)
+{
+  line-height: u-get-line-height($lineHeight);
+};

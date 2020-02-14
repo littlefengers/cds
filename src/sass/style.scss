@@ -1,6 +1,9 @@
 @use "sass:map";
 
-@import 'mixins/deepmap.scss';
+
+//Functions
+@import 'functions/_deepmap.scss';
+@import 'functions/_token-functions.scss';
 
 
 //Tokens

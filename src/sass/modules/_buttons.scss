@@ -1,4 +1,11 @@
-// .btn
-// {
-// 	@include u-button($blue);
-// }
+.btn-primary{
+    @include u-button-tokens($cds-tokens,primary)
+}
+
+.btn-secondary{
+    @include u-button-tokens($cds-tokens,secondary)
+}
+
+.btn-outline-primary{
+    @include u-button-tokens($cds-tokens,outline-primary)
+}
