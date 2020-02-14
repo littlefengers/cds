@@ -23,45 +23,45 @@
 	border-bottom: 1px solid $borderGrey !important;
 }
 
-@mixin u-button($bg) {
-  color: #fff;
-  border: none;
-  padding-top:px-to-em(12px);
-  padding-bottom:px-to-em(12px);
-  padding-left: px-to-em(32px);
-  padding-right: px-to-em(32px);
-  background: $bg;
-  text-transform: uppercase;
-  &:hover {
-    background:darken($bg,8%);
-    transition: all 0.3s ease;
-  }
-  &:active {
-    background:darken($bg,25%);
-  } 
-}
-
-// @mixin u-button($color-text,$color-bg, $cololr-bg-hover, $color-bg-focus, $border-width, $height, $border-radius,) {
-//   color: $color-text;
-//   background-color: $color-bg;
-//   border: $border-width solid;
-//   border-radius: $border-radius;
-//   height: $height;
+// @mixin u-button($bg) {
+//   color: #fff;
+//   border: none;
+//   padding-top:px-to-em(12px);
+//   padding-bottom:px-to-em(12px);
+//   padding-left: px-to-em(32px);
+//   padding-right: px-to-em(32px);
+//   background: $bg;
+//   text-transform: uppercase;
 //   &:hover {
-//     background-color:$color-bg-hover;
+//     background:darken($bg,8%);
+//     transition: all 0.3s ease;
 //   }
-//   &:focus {
-//     background-color:$color-bg-focus;
-//   }
+//   &:active {
+//     background:darken($bg,25%);
+//   } 
 // }
-// $cds-buttons-color-primary-default-background: #3071a9; // alias of color.blue-500
-// $cds-buttons-color-primary-focus-background: #2a6293; // alias of color.blue-700
-// $cds-buttons-color-primary-hover-background: #2a6293; // alias of color.blue-700
-// $cds-buttons-color-primary-text: #0060a9; // alias of color.blue-600
-// .new-button
-// {
-//   @include()
-// }
+
+@mixin u-button($font-size, $color-text,$color-bg, $color-bg-hover, $color-bg-focus, $border-width:1px, $height:40px, $width:100%, $border-radius:3px) {
+  color: $color-text;
+  background-color: $color-bg;
+  border: $border-width solid;
+  border-radius: $border-radius;
+  height: $height;
+  width: $width; //defaults to 100% of parent
+  font-size: $font-size;
+  cursor: pointer;
+  vertical-align: middle;
+  &:hover {
+    background-color:$color-bg-hover;
+  }
+  &:focus {
+    background-color:$color-bg-focus;
+  }
+}
+.new-button
+{
+  @include u-button($cds-buttons-font-size,$cds-buttons-color-primary-text,$cds-buttons-color-primary-default-background, $cds-buttons-color-primary-hover-background, $cds-buttons-color-primary-focus-background)
+}
 
 @mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
 {
