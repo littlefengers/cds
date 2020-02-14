@@ -1,5 +1,8 @@
 @use "sass:map";
 
+@import 'mixins/deepmap.scss';
+
+
 //Tokens
 @import 'modules/_cds-variables.scss';
 

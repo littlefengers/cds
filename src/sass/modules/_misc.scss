@@ -14,9 +14,37 @@
   text-shadow: none;
 }
 
+//Function for grabbing color
+@function u-get-color($color)
+{
+  @return map-get-deep($tokens,"color",#{$color}); 
+};
 
-//Playing with colors
 
-$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+//Typography
 
-@debug map.get($font-weights, "regular");
+@function u-get-font-size($fontSize)
+{
+  @return map-get-deep($tokens,"font","size", #{$fontSize});  //have to use interpolation for numbers
+};
+
+@function u-get-line-height($fontSize)
+{
+  @return map-get-deep($tokens,"font","line-height", #{$fontSize});  //have to use interpolation for numbers
+};
+
+@mixin fontSize($fontSize)
+{
+  font-size: u-get-font-size($fontSize);
+};
+
+@mixin lineHeight($lineHeight)
+{
+  line-height: u-get-line-height($lineHeight);
+};
+
+.newfontfile
+{
+  @include fontSize(2);
+  @include lineHeight(xl)
+}
