@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Fri, 14 Feb 2020 20:20:21 GMT
+  Generated on Fri, 14 Feb 2020 22:15:43 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -70,6 +70,14 @@ $cds-space-stack-lg: 0 0 24px 0 !default;
 $cds-space-stack-xl: 0 0 32px 0 !default;
 $cds-space-stack-xxl: 0 0 48px 0 !default;
 $cds-space-stack-xxxl: 0 0 64px 0 !default;
+$cds-space-inline-right-xxs: 0 4px 0 0 !default;
+$cds-space-inline-right-xs: 0 8px 0 0 !default;
+$cds-space-inline-right-sm: 0 12px 0 0 !default;
+$cds-space-inline-right-md: 0 16px 0 0 !default;
+$cds-space-inline-right-lg: 0 24px 0 0 !default;
+$cds-space-inline-right-xl: 0 32px 0 0 !default;
+$cds-space-inline-right-xxl: 0 48px 0 0 !default;
+$cds-space-inline-right-xxxl: 0 64px 0 0 !default;
 $cds-type-font-t1-desktop-size: 28px !default; // alias of font.size.1
 $cds-type-font-t1-desktop-line-height: 32px !default; // alias of font.line-height.xl
 $cds-type-font-t1-mobile-size: 24px !default; // alias of font.size.2
@@ -213,6 +221,16 @@ $cds-tokens: (
       'xl': $cds-space-stack-xl,
       'xxl': $cds-space-stack-xxl,
       'xxxl': $cds-space-stack-xxxl
+    ),
+    'inline-right': (
+      'xxs': $cds-space-inline-right-xxs,
+      'xs': $cds-space-inline-right-xs,
+      'sm': $cds-space-inline-right-sm,
+      'md': $cds-space-inline-right-md,
+      'lg': $cds-space-inline-right-lg,
+      'xl': $cds-space-inline-right-xl,
+      'xxl': $cds-space-inline-right-xxl,
+      'xxxl': $cds-space-inline-right-xxxl
     )
   ),
   'type': (
@@ -346,6 +364,9 @@ $cds-tokens: (
     'radius': $cds-buttons-radius,
     'font': (
       'size': $cds-buttons-font-size
+    ),
+    'space': (
+
     )
   )
 );

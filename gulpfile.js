@@ -4,7 +4,7 @@
  */
 
 var settings = {
-	clean: true,
+	clean: false,
 	scripts: true,
 	polyfills: true,
 	styles: true,

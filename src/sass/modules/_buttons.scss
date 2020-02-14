@@ -1,11 +1,22 @@
-.btn-primary{
-    @include u-button-tokens($cds-tokens,primary)
-}
+//TODO
+// Add padding it icon
 
-.btn-secondary{
-    @include u-button-tokens($cds-tokens,secondary)
-}
+.btn {
+  @include u-button-tokens($cds-tokens);
 
-.btn-outline-primary{
-    @include u-button-tokens($cds-tokens,outline-primary)
+  &-primary {
+    @include u-button-tokens-variant($cds-tokens, primary);
+  }
+
+  &-primary-alternate {
+    @include u-button-tokens-variant($cds-tokens, primary-alternate);
+  }
+
+  &-secondary {
+    @include u-button-tokens-variant($cds-tokens, secondary);
+  }
+
+  &-outline-primary {
+    @include u-button-tokens-variant($cds-tokens, outline-primary);
+  }
 }
