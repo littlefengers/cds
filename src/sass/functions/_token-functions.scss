@@ -22,20 +22,44 @@
 
 
 //Function for grabbing color
-@function u-get-color($color)
+@function get-color($color)
 {
-  @return map-get-deep($tokens,"color",#{$color}); 
+  @return map-get-deep($cds-tokens,"color",#{$color}); 
 };
-
 
 //Typography
 
-@function u-get-font-size($fontSize)
+@function get-font-size($font-size)
 {
-  @return map-get-deep($tokens,"font","size", #{$fontSize});  //have to use interpolation for numbers
+  @return map-get-deep($cds-tokens,"font","size", #{$fontSize});
 };
 
-@function u-get-line-height($fontSize)
+@function get-font-line-height($line-height)
 {
-  @return map-get-deep($tokens,"font","line-height", #{$fontSize});  //have to use interpolation for numbers
+  @return map-get-deep($cds-tokens,"font","line-height", #{$line-height});
 };
+
+@function get-font-weight($weight)
+{
+  @return map-get-deep($cds-tokens,"font","weight", #{$weight});
+};
+
+@function get-space($space-size){
+  @return map-get-deep($cds-tokens,"space", #{$space-size}); 
+};
+
+@function get-space-inset($space-size){
+  @return map-get-deep($cds-tokens,"space", "inset", #{$space-size}); 
+};
+
+//Radius
+
+@function get-radius($radius){
+  @return map-get-deep($cds-tokens,"radius", #{$radius}); 
+}
+
+//Border Width
+
+@function get-border-width($border-width){
+  @return map-get-deep($cds-tokens,"size", "border-width", #{$border-width}); 
+}

@@ -1,13 +1,12 @@
 @use "sass:map";
 
 
+//Tokens
+@import 'modules/_cds-variables.scss';
+
 //Functions
 @import 'functions/_deepmap.scss';
 @import 'functions/_token-functions.scss';
-
-
-//Tokens
-@import 'modules/_cds-variables.scss';
 
 //----------------------------------*\
 // SCSS MIXINS

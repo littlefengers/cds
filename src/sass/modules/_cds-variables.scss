@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Fri, 14 Feb 2020 22:15:43 GMT
+  Generated on Tue, 18 Feb 2020 20:58:20 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -51,9 +51,16 @@ $cds-font-line-height-md: 24px !default;
 $cds-font-line-height-sm: 20px !default;
 $cds-font-weight-default: 400 !default;
 $cds-font-weight-bold: 700 !default;
+$cds-radius-none: 0 !default;
+$cds-radius-sm: 2px !default;
+$cds-radius-md: 3px !default;
 $cds-size-border-width-thin: 1px !default;
 $cds-size-border-width-medium: 2px !default;
 $cds-size-border-width-thick: 3px !default;
+$cds-size-icon-svg-sm: 16px !default; // PLACEHOLDER
+$cds-size-icon-svg-md: 32px !default; // PLACEHOLDER
+$cds-size-icon-svg-lg: 48px !default; // PLACEHOLDER
+$cds-size-icon-svg-xl: 60px !default; // PLACEHOLDER
 $cds-space-xxs: 4px !default;
 $cds-space-xs: 8px !default;
 $cds-space-sm: 12px !default;
@@ -62,22 +69,8 @@ $cds-space-lg: 24px !default;
 $cds-space-xl: 32px !default;
 $cds-space-xxl: 48px !default;
 $cds-space-xxxl: 64px !default;
-$cds-space-stack-xxs: 0 0 4px 0 !default;
-$cds-space-stack-xs: 0 0 8px 0 !default;
-$cds-space-stack-sm: 0 0 12px 0 !default;
-$cds-space-stack-md: 0 0 16px 0 !default;
-$cds-space-stack-lg: 0 0 24px 0 !default;
-$cds-space-stack-xl: 0 0 32px 0 !default;
-$cds-space-stack-xxl: 0 0 48px 0 !default;
-$cds-space-stack-xxxl: 0 0 64px 0 !default;
-$cds-space-inline-right-xxs: 0 4px 0 0 !default;
-$cds-space-inline-right-xs: 0 8px 0 0 !default;
-$cds-space-inline-right-sm: 0 12px 0 0 !default;
-$cds-space-inline-right-md: 0 16px 0 0 !default;
-$cds-space-inline-right-lg: 0 24px 0 0 !default;
-$cds-space-inline-right-xl: 0 32px 0 0 !default;
-$cds-space-inline-right-xxl: 0 48px 0 0 !default;
-$cds-space-inline-right-xxxl: 0 64px 0 0 !default;
+$cds-space-inset-md: 16px 16px 16px 16px !default;
+$cds-space-inset-xl: 32px 32px 32px 32px !default;
 $cds-type-font-t1-desktop-size: 28px !default; // alias of font.size.1
 $cds-type-font-t1-desktop-line-height: 32px !default; // alias of font.line-height.xl
 $cds-type-font-t1-mobile-size: 24px !default; // alias of font.size.2
@@ -112,7 +105,7 @@ $cds-type-font-body-copy-mobile-size: 14px !default; // alias of font.size.6
 $cds-type-font-body-copy-mobile-line-height: 24px !default; // alias of font.line-height.md
 $cds-buttons-color-primary-default-background: #3071a9 !default; // alias of color.blue-500
 $cds-buttons-color-primary-focus-background: #2a6293 !default; // alias of color.blue-700
-$cds-buttons-color-primary-hover-background: #2a6293 !default; // alias of color.blue-700ssssss
+$cds-buttons-color-primary-hover-background: #2a6293 !default; // alias of color.blue-700
 $cds-buttons-color-primary-text: #ffffff !default; // alias of color.white
 $cds-buttons-color-primary-alternate-default-background: #008000 !default; // alias of color.green-500
 $cds-buttons-color-primary-alternate-focus-background: #0b6e22 !default; // alias of color.green-700
@@ -196,11 +189,22 @@ $cds-tokens: (
       'bold': $cds-font-weight-bold
     )
   ),
+  'radius': (
+    'none': $cds-radius-none,
+    'sm': $cds-radius-sm,
+    'md': $cds-radius-md
+  ),
   'size': (
     'border-width': (
       'thin': $cds-size-border-width-thin,
       'medium': $cds-size-border-width-medium,
       'thick': $cds-size-border-width-thick
+    ),
+    'icon-svg': (
+      'sm': $cds-size-icon-svg-sm,
+      'md': $cds-size-icon-svg-md,
+      'lg': $cds-size-icon-svg-lg,
+      'xl': $cds-size-icon-svg-xl
     )
   ),
   'space': (
@@ -212,25 +216,9 @@ $cds-tokens: (
     'xl': $cds-space-xl,
     'xxl': $cds-space-xxl,
     'xxxl': $cds-space-xxxl,
-    'stack': (
-      'xxs': $cds-space-stack-xxs,
-      'xs': $cds-space-stack-xs,
-      'sm': $cds-space-stack-sm,
-      'md': $cds-space-stack-md,
-      'lg': $cds-space-stack-lg,
-      'xl': $cds-space-stack-xl,
-      'xxl': $cds-space-stack-xxl,
-      'xxxl': $cds-space-stack-xxxl
-    ),
-    'inline-right': (
-      'xxs': $cds-space-inline-right-xxs,
-      'xs': $cds-space-inline-right-xs,
-      'sm': $cds-space-inline-right-sm,
-      'md': $cds-space-inline-right-md,
-      'lg': $cds-space-inline-right-lg,
-      'xl': $cds-space-inline-right-xl,
-      'xxl': $cds-space-inline-right-xxl,
-      'xxxl': $cds-space-inline-right-xxxl
+    'inset': (
+      'md': $cds-space-inset-md,
+      'xl': $cds-space-inset-xl
     )
   ),
   'type': (

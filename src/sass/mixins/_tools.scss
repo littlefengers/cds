@@ -58,7 +58,6 @@
   border-radius: map-get-deep($token-map,"buttons","radius");   //TODO: need to fix deepest to work with this
 }
 
-
 @mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
 {
   font-size:$font-size-mobile;
@@ -69,12 +68,92 @@
 	}
 }
 
-@mixin fontSize($fontSize)
-{
-  font-size: u-get-font-size($fontSize);
-};
+//Typography
 
-@mixin lineHeight($lineHeight)
+@mixin u-font-size($font-size)
 {
-  line-height: u-get-line-height($lineHeight);
-};
+  font-size: get-font-size($font-size);
+}
+
+@mixin u-font-weight($weight){
+  font-weight: get-font-weight($weight)
+}
+
+@mixin u-font-line-height($line-height)
+{
+  line-height: get-line-height($line-height);
+}
+
+//Color
+
+@mixin u-background-color($color){
+  background-color: get-color($color);
+}
+
+@mixin u-color($color){
+  color: get-color($color);
+}
+
+//Spacing
+
+//Spacing - Padding
+@mixin u-padding-left($space-size)
+{
+  padding-left: get-space($space-size);
+}
+
+@mixin u-padding-right($space-size)
+{
+  padding-right: get-space($space-size);
+}
+
+@mixin u-padding-top($space-size)
+{
+  padding-top: get-space($space-size);
+}
+
+@mixin u-padding-bottom($space-size)
+{
+  padding-bottom: get-space($space-size);
+}
+
+//Spacing - Margin
+
+@mixin u-margin-left($space-size)
+{
+  margin-left: get-space($space-size);
+}
+
+@mixin u-margin-right($space-size)
+{
+  margin-right: get-space($space-size);
+}
+
+@mixin u-margin-top($space-size)
+{
+  margin-top: get-space($space-size);
+}
+
+@mixin u-margin-bottom($space-size)
+{
+  margin-bottom: get-space($space-size);
+}
+
+//Spacing - Inset
+@mixin u-padding-inset($space-size)
+{
+  padding: get-space-inset($space-size);
+}
+
+//Radius
+
+@mixin u-radius($radius)
+{
+  border-radius: get-radius($radius);
+}
+
+//Border Width
+
+@mixin u-border-width($border-width) {
+  border-width: get-border-width($border-width);
+}
