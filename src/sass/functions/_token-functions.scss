@@ -1,7 +1,7 @@
 //TODO there might be away to do this more efficiently by iterating through the map to get the deepiest item
 //This will go through a nested map and grab the deepiest property
 //STILL NEEDS TESTING
-@function get-deepest-token($token, $component, $attribute-type, $component-variant:"", $component-state:"", $attribute){
+@function get-deepest-token($token:$cds-tokens, $component, $attribute-type, $attribute, $component-variant:"", $component-state:""){
     @if type-of($token) != 'map' {
       @error 'The argument $map: `#{$map}` is of incorrect type: `#{type-of($map)}`. Type of `Map` is required!';
     }
@@ -18,8 +18,6 @@
       @return map-get-deep($token, $component, $attribute-type, $attribute);
     }
   };
-  
-
 
 //Function for grabbing color
 @function get-color($color)

@@ -25,39 +25,6 @@
 
 //TODO Need to remove the 0 after the PX
 
-@mixin u-button-tokens-variant($token-map,$variant) {
-  color: get-deepest-token($token-map, "buttons", "color", $variant, "","text");
-  background-color: get-deepest-token($token-map, "buttons", "color", $variant, "default","background");
-  //TODO: Remove the "px"
-  @if (get-deepest-token($token-map, "buttons", "size", $variant, "","border-width") == 0px)
-  {
-    border: none;
-  } @else {
-    border: get-deepest-token($token-map, "buttons", "size", $variant, "","border-width") solid;
-  }
- 
-  &:hover {
-    background-color: get-deepest-token($token-map, "buttons", "color", $variant, "hover","background");
-  }
-  &:focus {
-    background-color: get-deepest-token($token-map, "buttons", "color", $variant, "focus","background");
-  }
-}
-
-//Butto Mixins
-
-@mixin u-button-tokens($token-map) 
-{
-  cursor: pointer;
-  font-style:normal;
-  vertical-align: middle;
-  text-decoration: none;;
-  height: map-get-deep($token-map, "buttons", "size","height");
-  width: map-get-deep($token-map, "buttons", "size","width");
-  font-size: map-get-deep($token-map,"buttons","font","size"); //TODO: need to fix deepest to work with this
-  border-radius: map-get-deep($token-map,"buttons","radius");   //TODO: need to fix deepest to work with this
-}
-
 @mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
 {
   font-size:$font-size-mobile;
@@ -68,29 +35,17 @@
 	}
 }
 
-//Typography
-
-@mixin u-font-size($font-size)
-{
-  font-size: get-font-size($font-size);
-}
-
-@mixin u-font-weight($weight){
-  font-weight: get-font-weight($weight)
-}
-
-@mixin u-font-line-height($line-height)
-{
-  line-height: get-line-height($line-height);
-}
-
 //Color
 
-@mixin u-background-color($color){
+@mixin u-color-bg($color){
   background-color: get-color($color);
 }
 
-@mixin u-color($color){
+@mixin u-color-border($color){
+  border-color: get-color($color);
+}
+
+@mixin u-color-text($color){
   color: get-color($color);
 }
 

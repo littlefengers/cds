@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Tue, 18 Feb 2020 20:58:20 GMT
+  Generated on Wed, 19 Feb 2020 19:40:52 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -51,7 +51,6 @@ $cds-font-line-height-md: 24px !default;
 $cds-font-line-height-sm: 20px !default;
 $cds-font-weight-default: 400 !default;
 $cds-font-weight-bold: 700 !default;
-$cds-radius-none: 0 !default;
 $cds-radius-sm: 2px !default;
 $cds-radius-md: 3px !default;
 $cds-size-border-width-thin: 1px !default;
@@ -74,7 +73,7 @@ $cds-space-inset-xl: 32px 32px 32px 32px !default;
 $cds-type-font-t1-desktop-size: 28px !default; // alias of font.size.1
 $cds-type-font-t1-desktop-line-height: 32px !default; // alias of font.line-height.xl
 $cds-type-font-t1-mobile-size: 24px !default; // alias of font.size.2
-$cds-type-font-t1-mobile-line-height: 24px !default; // alias of font.line-height.md
+$cds-type-font-t1-mobile-line-height: 28px !default; // alias of font.line-height.lg
 $cds-type-font-t2-desktop-size: 22px !default; // alias of font.size.3
 $cds-type-font-t2-desktop-line-height: 32px !default; // alias of font.line-height.xl
 $cds-type-font-t2-mobile-size: 18px !default; // alias of font.size.4
@@ -124,8 +123,22 @@ $cds-buttons-size-height: 40px !default;
 $cds-buttons-size-width: 100%px !default;
 $cds-buttons-size-border-width: 0px !default;
 $cds-buttons-size-outline-primary-border-width: 1px !default;
-$cds-buttons-radius: 3px !default;
+$cds-buttons-radius: 3px !default; // alias of radius.md
 $cds-buttons-font-size: 16px !default;
+$cds-notifications-color-alert-background: #ffcc00 !default; // alias of color.yellow-200
+$cds-notifications-color-alert-border: #fff8d2 !default; // alias of color.yellow-100
+$cds-notifications-color-alert-text: #333333 !default; // alias of color.gray-900
+$cds-notifications-color-error-background: #fdd6d6 !default; // alias of color.red-100
+$cds-notifications-color-error-border: #d32029 !default; // alias of color.red-500
+$cds-notifications-color-error-text: #333333 !default; // alias of color.gray-900
+$cds-notifications-color-general-background: #eff7fb !default; // alias of color.blue-100
+$cds-notifications-color-general-border: #3071a9 !default; // alias of color.blue-500
+$cds-notifications-color-general-text: #333333 !default; // alias of color.gray-900
+$cds-notifications-color-success-background: #dff0d8 !default; // alias of color.green-100
+$cds-notifications-color-success-border: #008000 !default; // alias of color.green-500
+$cds-notifications-color-success-text: #333333 !default; // alias of color.gray-900
+$cds-notifications-size-border-width: 2px !default; // alias of size.border-width.medium
+$cds-notifications-radius: 3px !default; // alias of radius.md
 
 $cds-tokens: (
   'bp': (
@@ -190,7 +203,6 @@ $cds-tokens: (
     )
   ),
   'radius': (
-    'none': $cds-radius-none,
     'sm': $cds-radius-sm,
     'md': $cds-radius-md
   ),
@@ -356,5 +368,33 @@ $cds-tokens: (
     'space': (
 
     )
+  ),
+  'notifications': (
+    'color': (
+      'alert': (
+        'background': $cds-notifications-color-alert-background,
+        'border': $cds-notifications-color-alert-border,
+        'text': $cds-notifications-color-alert-text
+      ),
+      'error': (
+        'background': $cds-notifications-color-error-background,
+        'border': $cds-notifications-color-error-border,
+        'text': $cds-notifications-color-error-text
+      ),
+      'general': (
+        'background': $cds-notifications-color-general-background,
+        'border': $cds-notifications-color-general-border,
+        'text': $cds-notifications-color-general-text
+      ),
+      'success': (
+        'background': $cds-notifications-color-success-background,
+        'border': $cds-notifications-color-success-border,
+        'text': $cds-notifications-color-success-text
+      )
+    ),
+    'size': (
+      'border-width': $cds-notifications-size-border-width
+    ),
+    'radius': $cds-notifications-radius
   )
 );
