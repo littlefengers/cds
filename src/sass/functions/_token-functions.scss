@@ -29,8 +29,10 @@
 
 @function get-font-size($font-size)
 {
-  @return map-get-deep($cds-tokens,"font","size", #{$fontSize});
+  @return map-get-deep($cds-tokens,"font","size", #{$font-size});
 };
+
+//TODO Add option to return multiple instead of pixel
 
 @function get-font-line-height($line-height)
 {
@@ -46,6 +48,7 @@
   @return map-get-deep($cds-tokens,"space", #{$space-size}); 
 };
 
+//TODO Get rid off?
 @function get-space-inset($space-size){
   @return map-get-deep($cds-tokens,"space", "inset", #{$space-size}); 
 };

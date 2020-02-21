@@ -1,47 +1,457 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Copy Me</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<h1>Copy Me</h1>
 
-	<p>Anything you put in the <code>copy</code> directory gets copied as-is into the <code>dist</code> directory.</p>
-	<div class="l-wrap"></div>
-	<p class="t-strike">Struck through!</p>
-	<p style="width:250px"><button id="click-me" class="btn btn-primary">Primary Button</button></p>
-	<p style="width:250px"><button id="click-me" class="btn btn-primary-alternate">Primary Alternate Button</button></p>
-	<p style="width:250px"><button id="click-me" class="btn btn-primary-alternate"><span class="icon-carousel-pause"></span>Primary Alt Icon</button></p>
-	<p style="width:250px"><button id="click-me" class="btn btn-secondary">Secondary Button</button></p>
-	<p style="width:250px"><button id="click-me" class="btn btn-outline-primary">Outline Primary Button</button></p>
-	<div class="cds-t1">Testing t1</div>
-	<div class="cds-t2">Testing t2</div>
-	<div class="cds-t3">Testing t3</div>
-	<div class="cds-t4">Testing t4</div>
-	<div class="cds-t5">Testing t5</div>
-	<div class="cds-t6">Testing t6</div>
-	<div class="cds-t7">Testing t7</div>
-	<div class="cds-body-copy">Testing body copy</div>
-	<div style="width:400px">
+<head>
+	<title>CDS SCSS Utilities</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor/tachyons-sass/tachyons.css">
+	<link href="https://myCDN.com/prism@v1.x/themes/prism.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<section class="mw8-ns center pa4 ph5-ns">
+		<h1 class="mt0">Utilities</h1>
+		<p class="lh-copy">
+			Utilities are simple HTML classes typically scoped to a single CSS property like border-style or
+			background-color. Utilities can be used additively to style an object from scratch or to override a style
+			defined in component CSS.
+		</p>
+		<!-- TODO: Best practices -->
+	</section>
+
+	<section>
+		<div class="overflow-auto">
+			<section class="f6 w-100 mw8 center mt4">
+				<h3 class="mb4">Colors</h3>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<thead>
+						<tr>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-bg($color)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-bg("costco-blue")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">background-color: #005dab</code></pre>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-border($color)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-border(&quot;costco-blue&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">border-color: #005dab</code></pre>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-border($color)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-color-text(&quot;costco-blue&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">color: #005dab</code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section class="f6 w-100 mw8 center mt4">
+				<h3 class="mb4">Space</h3>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<thead>
+						<tr>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-left($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-left(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">padding-left: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-right($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-right(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">padding-right: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-top($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-top(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">padding-top: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-bottom($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-bottom(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">padding-bottom: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-left($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-left(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">margin-left: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-right($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-right(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">margin-right: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-top($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-top(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">margin-top: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-bottom($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-margin-bottom(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">margin-bottom: 16px;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-inset($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-padding-inset(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">padding: 16px;</code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			
+
+			<section class="f6 w-100 mw8 center mt4">
+				<h3 class="mb4">Radius</h3>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<thead>
+						<tr>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">tbd</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-radius($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-radius(&quot;md&quot;)</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">border-radius: 3px</code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section class="f6 w-100 mw8 center mt4">
+				<h3 class="mb4">Typography</h3>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<thead>
+						<tr>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">.cds-t[$font-size#]</td>
+	
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-typeset($type-name)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">@include cds-u-typeset("t1")</code></pre>
+							</td>
+							<td class="pv3 pr2 bb b--black-20">
+								<pre><code class="language-css">
+									.cds-t1 {
+										font-size: 24px;
+										line-height: 28px;
+									  }
+									  
+									  @media (min-width: 769px) {
+										.cds-t1 {
+										  font-size: 28px;
+										  line-height: 28px;
+										}
+									  }
+								  </code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h4 class="mb2 mt4">Font-Size Utility Classes</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-1</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 28px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-1">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-2</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 24px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-2">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-3</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 22px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-3">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-4</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 18px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-4">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-5</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 16px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-5">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-6</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 14px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-6">I will not waste chalk.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-font-size-7</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">font-size: 12px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20">	<span class="cds-font-size-7">I will not waste chalk.</span></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Line-Height Utility Classes</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-line-height-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">line-height:32px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20 w-50"><span class="cds-line-height-xl">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-line-height-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">line-height:28px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20 w-50"><span class="cds-line-height-lg">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-line-height-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">line-height:24px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20 w-50"><span class="cds-line-height-md">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters./span></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-line-height-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">line-height: 20px</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20 w-50"><span class="cds-line-height-sm">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</span></td>
+						</tr>
 		
-	<div class="notification notification-alert">
-		Lorem, ipsum dolor sit amet consectetur adisspisicing elit. Iste, praesentium! Quia assumenda perspiciatis ipsa fugiat doloremque? Amet delectus sit dignissimos consequatur quos, commodi, labore asperiores eos rerum vero consectetur quaerat?
-	</div>
-	<div class="notification notification-error">
-		Lorem, ipsum dolor sit amet consectetur adisspisicing elit. Iste, praesentium! Quia assumenda perspiciatis ipsa fugiat doloremque? Amet delectus sit dignissimos consequatur quos, commodi, labore asperiores eos rerum vero consectetur quaerat?
-	</div>
-	<div class="notification notification-general">
-		Lorem, ipsum dolor sit amet consectetur adisspisicing elit. Iste, praesentium! Quia assumenda perspiciatis ipsa fugiat doloremque? Amet delectus sit dignissimos consequatur quos, commodi, labore asperiores eos rerum vero consectetur quaerat?
-	</div>
-	<div class="notification notification-success">
-		Lorem, ipsum dolor sit amet consectetur adisspisicing elit. Iste, praesentium! Quia assumenda perspiciatis ipsa fugiat doloremque? Amet delectus sit dignissimos consequatur quos, commodi, labore asperiores eos rerum vero consectetur quaerat?
-	</div>
-</div>
+					</tbody>
+				</table>
+			</section>
+
+
+			<section class="f6 w-100 mw8 center mt4">
+				<h3 class="mb4">Functions</h3>
+				<p class="lh-copy">The functions below returns values  from the CDS design tokens. Use these function only if you can't accomplish with utility classes and mixins.</p>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<thead>
+						<tr>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Function</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
+							<th class="fw6 bb b--black-20 tl pb3 pr3">Returned Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-color($color)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-color("costco-blue")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">#005dab</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-space($space)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-space("md")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">16px</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-size($font-size)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-size(3)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">22px</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-line-height($line-height)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-line-height("md")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">24px</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-weight($font-weight)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-font-weight("default")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">400</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-radius($radius)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-radius("md")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">3px</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-border-width($border-width)</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-scss">get-border-width("medium")</code></pre>
+							</td>
+							<td class="pv3 pr3 bb b--black-20">
+								<pre><code class="language-css">2px</code></pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</section>
+
+
 
 	<!-- Scripts -->
+	<script src="js/vendor.js"></script>
 	<!-- <script src="js/detects.js"></script>
 	<script src="js/another-file.js"></script>
 	<script src="js/main.polyfills.js"></script> -->
 </body>
+
 </html>

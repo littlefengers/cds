@@ -1,6 +1,3 @@
-
-
-
 //Need to move this back to _tools.scss later
 
 @mixin u-button-tokens-variant($token-map,$variant) {
@@ -31,11 +28,10 @@
   vertical-align: middle;
   text-decoration: none;;
   height: map-get-deep($token-map, "buttons", "size","height");
-  width: map-get-deep($token-map, "buttons", "size","width");
+  width: map-get-deep($token-map, "buttons", "size","width"); //TODO: FIX width PX
   font-size: map-get-deep($token-map,"buttons","font","size"); //TODO: need to fix deepest to work with this
   border-radius: map-get-deep($token-map,"buttons","radius");   //TODO: need to fix deepest to work with this
 }
-
 
 //TODO
 // Add padding it icon

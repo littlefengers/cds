@@ -221,21 +221,21 @@ var buildStyles = function (done) {
 			})
 		]))
 		.pipe(header(banner.full, {package: package}))
-		.pipe(dest(paths.styles.output))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(postcss([
-			minify({
-				discardComments: {
-					removeAll: true
-				}
-			})
-		]))
+		// .pipe(dest(paths.styles.output))
+		// .pipe(rename({suffix: '.min'}))
+		// .pipe(postcss([
+		// 	minify({
+		// 		discardComments: {
+		// 			removeAll: true
+		// 		}
+		// 	})
+		// ]))
 		// .pipe(minify({
 		// 	discardComments: {
 		// 		removeAll: true
 		// 	}
 		// }))
-		.pipe(header(banner.min, {package: package}))
+		// .pipe(header(banner.min, {package: package}))
 		.pipe(dest(paths.styles.output));
 
 };
@@ -319,7 +319,7 @@ var watchSource = function (done) {
 exports.default = series(
 	cleanDist,
 	parallel(
-		// buildScripts,
+		buildScripts,
 		// lintScripts,
 		buildStyles,
 		// copyTokens,

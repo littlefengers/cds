@@ -1,104 +1,166 @@
-@mixin t-headerFont
-{
-	font-family: "soleil", helvetica, arial, sans-serif;
-	font-weight: 500;
-	line-height:1em;
+@mixin t-bodyFont {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-size: px-to-em(18px);
+  // line-height: 1.5em;
+  font-style: normal;
+  font-weight: 400;
 }
 
-@mixin t-bodyFont
-{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	// font-size: px-to-em(18px);
-	// line-height: 1.5em;
-	font-style:normal;
-	font-weight: 400;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0; //Added this for collapsed margins
 }
 
-h1, h2, h3, h4, h5, h6
-{
-	@include t-headerFont;
-	margin-top:0; //Added this for collapsed margins
+//Typography mixins
+
+@mixin cds-u-font-size($font-size, $important: false) {
+  @if $important == true {
+    font-size: get-font-size($font-size) !important;
+  } @else {
+    font-size: get-font-size($font-size);
+  }
 }
 
-
-//CDS Fonts
-//MAYBE MOVE THIS TO TOOLS???
-
-//Typography
-
-@mixin u-font-size($font-size)
-{
-  font-size: get-font-size($font-size);
+@mixin cds-u-font-weight($weight) {
+  font-weight: get-font-weight($weight);
 }
 
-@mixin u-font-weight($weight){
-  font-weight: get-font-weight($weight)
+@mixin cds-u-font-line-height($line-height, $important: false) {
+  @if $important == true{
+	line-height: get-font-line-height($line-height) !important;
+  } @else {
+	line-height: get-font-line-height($line-height);
+  }	
 }
 
-@mixin u-font-line-height($line-height)
-{
-  line-height: get-line-height($line-height);
+@mixin cds-u-typeset($type) {
+  font-size: get-deepest-token(
+    $cds-tokens,
+    "type",
+    "font",
+    "size",
+    "#{$type}-mobile"
+  );
+  line-height: get-deepest-token(
+    $cds-tokens,
+    "type",
+    "font",
+    "line-height",
+    "#{$type}-mobile"
+  );
+  @media (min-width: $screen-lg-min) {
+    font-size: get-deepest-token(
+      $cds-tokens,
+      "type",
+      "font",
+      "size",
+      "#{$type}-desktop"
+    );
+    line-height: get-deepest-token(
+      $cds-tokens,
+      "type",
+      "font",
+      "line-height",
+      "#{$type}-desktop"
+    );
+  }
 }
-
-@mixin u-typeset($type)
-{
-	font-size: get-deepest-token($cds-tokens,"type", "font","size","#{$type}-mobile");
-	line-height: get-deepest-token($cds-tokens,"type", "font","line-height","#{$type}-mobile");
-	@media (min-width: $screen-lg-min) {
-		font-size:get-deepest-token($cds-tokens,"type", "font","size","#{$type}-desktop");
-		line-height:get-deepest-token($cds-tokens,"type", "font","size","#{$type}-desktop");
-	}
-}
-
 
 //Helper classes
 
-.cds-t1
-{
-	@include u-typeset("t1")
+//Font size only
+
+.cds-font-size-1 {
+  @include cds-u-font-size(1, true);
 }
 
-.cds-t2
-{
-	@include u-typeset("t2")
+.cds-font-size-2 {
+  @include cds-u-font-size(2, true);
 }
 
-.cds-t3
-{
-	@include u-typeset("t3")
+.cds-font-size-3 {
+  @include cds-u-font-size(3, true);
 }
 
-.cds-t4
-{
-	@include u-typeset("t4")
+.cds-font-size-4 {
+  @include cds-u-font-size(4, true);
 }
 
-.cds-t5
-{
-	@include u-typeset("t5")
+.cds-font-size-5 {
+  @include cds-u-font-size(5, true);
 }
 
-.cds-t6
-{
-	@include u-typeset("t6")
+.cds-font-size-6 {
+  @include cds-u-font-size(6, true);
 }
 
-.cds-t7
-{
-	@include u-typeset("t7")
+.cds-font-size-7 {
+  @include cds-u-font-size(7, true);
 }
 
-.cds-body-copy
+//Line height only
+
+.cds-line-height-xl
 {
-	@include u-typeset("body-copy")
+	@include cds-u-font-line-height("xl", true)
 }
 
-.cds-t-weight-bold
+.cds-line-height-lg
 {
-	@include u-font-weight('bold');
+	@include cds-u-font-line-height("lg", true)
 }
 
-.cds-t-weight-default
+.cds-line-height-md
 {
-	@include u-font-weight('default');
+	@include cds-u-font-line-height("md", true)
+}
+
+.cds-line-height-sm
+{
+	@include cds-u-font-line-height("sm", true )
+}
+
+//Font Size and line-height
+.cds-t1 {
+  @include cds-u-typeset("t1");
+}
+
+.cds-t2 {
+  @include cds-u-typeset("t2");
+}
+
+.cds-t3 {
+  @include cds-u-typeset("t3");
+}
+
+.cds-t4 {
+  @include cds-u-typeset("t4");
+}
+
+.cds-t5 {
+  @include cds-u-typeset("t5");
+}
+
+.cds-t6 {
+  @include cds-u-typeset("t6");
+}
+
+.cds-t7 {
+  @include cds-u-typeset("t7");
+}
+
+.cds-body-copy {
+  @include cds-u-typeset("body-copy");
+}
+
+.cds-u-font-bold {
+  @include cds-u-font-weight("bold");
+}
+
+.cds-u-font-default {
+  @include cds-u-font-weight("default");
 }
