@@ -106,6 +106,8 @@ var browserSync = require('browser-sync');
 //Sass options
 sass.compiler = require('sass');
 
+//Adding gulp cache
+var cache = require('gulp-cache"')
 
 /**
  * Gulp Tasks
@@ -277,6 +279,12 @@ var copyTokens = function (done) {
 
 };
 
+//Needs this to clear cache
+
+var clearCache = function (done){
+	cache.clearAll(done);
+	done();
+}
 
 // Watch for changes to the src directory
 var startServer = function (done) {
@@ -305,7 +313,7 @@ var reloadBrowser = function (done) {
 
 // Watch for changes
 var watchSource = function (done) {
-	watch(paths.input, series(exports.default, reloadBrowser));
+	watch(paths.input, series(exports.default, clearCache, reloadBrowser));
 	done();
 };
 

@@ -4,12 +4,12 @@
 .notification
 {
     border: solid;   // Need to make a token for this
-    @include u-padding-inset("md");
+    @include u-padding-inset("sm");
     @include u-radius("md");
     @include u-border-width("medium");
     @include u-color-text("gray-900");
     @include u-margin-bottom('sm');
-
+    @include cds-u-font-line-height("sm");
     &-alert {
         @include u-color-bg("yellow-100");
         @include u-color-border("yellow-200");
@@ -34,11 +34,12 @@
 .notification-v2
 {
     border: solid;   // Need to make a token for this
-    @include u-padding-inset("md");
+    @include u-padding-inset("sm");
     @include u-radius("md");
     @include u-border-width("medium");
     @include u-color-text("gray-900");
     @include u-margin-bottom('sm');
+    @include cds-u-font-line-height("sm");
 
     &-alert {
         @include u-color-bg("yellow-100");

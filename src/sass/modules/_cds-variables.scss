@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Wed, 19 Feb 2020 19:40:52 GMT
+  Generated on Fri, 21 Feb 2020 16:12:39 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -68,6 +68,7 @@ $cds-space-lg: 24px !default;
 $cds-space-xl: 32px !default;
 $cds-space-xxl: 48px !default;
 $cds-space-xxxl: 64px !default;
+$cds-space-inset-sm: 12px 12px 12px 12px !default;
 $cds-space-inset-md: 16px 16px 16px 16px !default;
 $cds-space-inset-xl: 32px 32px 32px 32px !default;
 $cds-type-font-t1-desktop-size: 28px !default; // alias of font.size.1
@@ -229,6 +230,7 @@ $cds-tokens: (
     'xxl': $cds-space-xxl,
     'xxxl': $cds-space-xxxl,
     'inset': (
+      'sm': $cds-space-inset-sm,
       'md': $cds-space-inset-md,
       'xl': $cds-space-inset-xl
     )

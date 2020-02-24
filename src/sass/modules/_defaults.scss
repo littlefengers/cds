@@ -8,11 +8,9 @@ html {}
 
 body {
     @include t-bodyFont;
-    color: $bodyGrey;
+    @include u-color-text("gray-900");
     background-color: $bg;
 }
-
-body, html {}
 
 a {
     color: $blue;

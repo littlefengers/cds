@@ -20,9 +20,13 @@
   };
 
 //Function for grabbing color
-@function get-color($color)
+@function get-color($variant, $attribute:null)
 {
-  @return map-get-deep($cds-tokens,"color",#{$color}); 
+  @if ($attribute == null){
+    @return map-get-deep($cds-tokens,"color",#{$variant}); 
+  } @else {
+    @return map-get-deep($cds-tokens,"color",#{$attribute}, #{$variant});
+  }
 };
 
 //Typography

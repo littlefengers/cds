@@ -1,109 +1,134 @@
 @function px-to-em($px, $base: 16px) {
-    @return $px / $base * 1em;
+  @return $px / $base * 1em;
 }
 
-
-@mixin u-center()
-{
-	margin: 0 auto;
+@mixin u-center() {
+  margin: 0 auto;
 }
 
-@mixin u-removeLeftMargins
-{
-	margin-left: 0;
+@mixin u-removeLeftMargins {
+  margin-left: 0;
 }
 
-@mixin u-removeRightMargins
-{
-	margin-right: 0;
+@mixin u-removeRightMargins {
+  margin-right: 0;
 }
 
-@mixin u-divider
-{
-	border-bottom: 1px solid $borderGrey !important;
+@mixin u-divider {
+  border-bottom: 1px solid $borderGrey !important;
 }
 
 //TODO Need to remove the 0 after the PX
 
-@mixin u-text-styles ($font-size-desktop,$font-line-height-desktop, $font-size-mobile,$font-line-height-mobile, $bp)
-{
-  font-size:$font-size-mobile;
-	line-height:$font-line-height-mobile;
-	@media (min-width: $bp) {
-		font-size:$font-size-desktop;
-		line-height:$font-line-height-desktop;
-	}
+@mixin u-text-styles(
+  $font-size-desktop,
+  $font-line-height-desktop,
+  $font-size-mobile,
+  $font-line-height-mobile,
+  $bp
+) {
+  font-size: $font-size-mobile;
+  line-height: $font-line-height-mobile;
+  @media (min-width: $bp) {
+    font-size: $font-size-desktop;
+    line-height: $font-line-height-desktop;
+  }
 }
 
 //Color
 
-@mixin u-color-bg($color){
+@mixin u-color-bg($color) {
   background-color: get-color($color);
 }
 
-@mixin u-color-border($color){
+@mixin u-color-border($color) {
   border-color: get-color($color);
 }
 
-@mixin u-color-text($color){
+@mixin u-color-text($color) {
   color: get-color($color);
 }
 
 //Spacing
 
 //Spacing - Padding
-@mixin u-padding-left($space-size)
-{
-  padding-left: get-space($space-size);
+@mixin u-padding-left($space-size, $important: null) {
+  @if ($important == true) {
+    padding-left: get-space($space-size) !important;
+  } @else {
+    padding-left: get-space($space-size);
+  }
+}
+@mixin u-padding-right($space-size, $important: null) {
+  @if ($important == true) {
+    padding-right: get-space($space-size) !important;
+  } @else {
+    padding-right: get-space($space-size);
+  }
 }
 
-@mixin u-padding-right($space-size)
-{
-  padding-right: get-space($space-size);
+
+@mixin u-padding-top($space-size, $important: null) {
+  @if ($important == true) {
+    padding-top: get-space($space-size) !important;
+  } @else {
+    padding-top: get-space($space-size);
+  }
 }
 
-@mixin u-padding-top($space-size)
-{
-  padding-top: get-space($space-size);
-}
 
-@mixin u-padding-bottom($space-size)
-{
-  padding-bottom: get-space($space-size);
+@mixin u-padding-bottom($space-size, $important: null) {
+  @if ($important == true) {
+    padding-bottom: get-space($space-size) !important;
+  } @else {
+    padding-bottom: get-space($space-size);
+  }
 }
 
 //Spacing - Margin
-
-@mixin u-margin-left($space-size)
-{
-  margin-left: get-space($space-size);
+@mixin u-margin-left($space-size, $important: null) {
+  @if ($important == true) {
+    margin-left: get-space($space-size) !important;
+  } @else {
+    margin-left: get-space($space-size);
+  }
+}
+@mixin u-margin-right($space-size, $important: null) {
+  @if ($important == true) {
+    margin-right: get-space($space-size) !important;
+  } @else {
+    margin-right: get-space($space-size);
+  }
 }
 
-@mixin u-margin-right($space-size)
-{
-  margin-right: get-space($space-size);
+
+@mixin u-margin-top($space-size, $important: null) {
+  @if ($important == true) {
+    margin-top: get-space($space-size) !important;
+  } @else {
+    margin-top: get-space($space-size);
+  }
 }
 
-@mixin u-margin-top($space-size)
-{
-  margin-top: get-space($space-size);
+
+@mixin u-margin-bottom($space-size, $important: null) {
+  @if ($important == true) {
+    margin-bottom: get-space($space-size) !important;
+  } @else {
+    margin-bottom: get-space($space-size);
+  }
 }
 
-@mixin u-margin-bottom($space-size)
-{
-  margin-bottom: get-space($space-size);
-}
+
 
 //Spacing - Inset
-@mixin u-padding-inset($space-size)
-{
+@mixin u-padding-inset($space-size) {
   padding: get-space-inset($space-size);
 }
 
 //Radius
 
-@mixin u-radius($radius)
-{
+@mixin u-radius($radius) {
   border-radius: get-radius($radius);
 }
 
