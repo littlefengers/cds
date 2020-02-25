@@ -19,44 +19,6 @@
     }
   };
 
-//Function for grabbing color
-@function get-color($variant, $attribute:null)
-{
-  @if ($attribute == null){
-    @return map-get-deep($cds-tokens,"color",#{$variant}); 
-  } @else {
-    @return map-get-deep($cds-tokens,"color",#{$attribute}, #{$variant});
-  }
-};
-
-//Typography
-
-@function get-font-size($font-size)
-{
-  @return map-get-deep($cds-tokens,"font","size", #{$font-size});
-};
-
-//TODO Add option to return multiple instead of pixel
-
-@function get-font-line-height($line-height)
-{
-  @return map-get-deep($cds-tokens,"font","line-height", #{$line-height});
-};
-
-@function get-font-weight($weight)
-{
-  @return map-get-deep($cds-tokens,"font","weight", #{$weight});
-};
-
-@function get-space($space-size){
-  @return map-get-deep($cds-tokens,"space", #{$space-size}); 
-};
-
-//TODO Get rid off?
-@function get-space-inset($space-size){
-  @return map-get-deep($cds-tokens,"space", "inset", #{$space-size}); 
-};
-
 //Radius
 
 @function get-radius($radius){

@@ -5,6 +5,7 @@
 
 var settings = {
 	clean: false,
+	clearCache: true,
 	scripts: true,
 	polyfills: true,
 	styles: true,
@@ -107,7 +108,7 @@ var browserSync = require('browser-sync');
 sass.compiler = require('sass');
 
 //Adding gulp cache
-var cache = require('gulp-cache"')
+var cache = require('gulp-cache');
 
 /**
  * Gulp Tasks
@@ -279,9 +280,10 @@ var copyTokens = function (done) {
 
 };
 
-//Needs this to clear cache
+//Clears cache
 
 var clearCache = function (done){
+	if (!settings.clearCache) return done();
 	cache.clearAll(done);
 	done();
 }
@@ -313,7 +315,7 @@ var reloadBrowser = function (done) {
 
 // Watch for changes
 var watchSource = function (done) {
-	watch(paths.input, series(exports.default, clearCache, reloadBrowser));
+	watch(paths.input, series(exports.default,reloadBrowser));
 	done();
 };
 
@@ -326,6 +328,7 @@ var watchSource = function (done) {
 // gulp
 exports.default = series(
 	cleanDist,
+	clearCache,
 	parallel(
 		buildScripts,
 		// lintScripts,

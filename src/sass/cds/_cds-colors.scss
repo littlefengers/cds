@@ -1,0 +1,37 @@
+//Color Functions
+
+@function get-color($variant, $attribute:null)
+{
+  @if ($attribute == null){
+    @return map-get-deep($cds-tokens,"color",#{$variant}); 
+  } @else {
+    @return map-get-deep($cds-tokens,"color",#{$attribute}, #{$variant});
+  }
+};
+
+
+//Color Mixins
+
+@mixin u-color-bg($color, $important: null) {
+  @if ($important == true) {
+    background-color: get-color($color) !important;
+  } @else {
+    background-color: get-color($color);
+  }
+}
+
+@mixin u-color-border($color, $important: null) {
+  @if ($important == true) {
+    border-color: get-color($color) !important;
+  } @else {
+    border-color: get-color($color);
+  }
+}
+
+@mixin u-color-text($color, $important: null) {
+  @if ($important == true) {
+    color: get-color($color) !important;
+  } @else {
+    color: get-color($color);
+  }
+}

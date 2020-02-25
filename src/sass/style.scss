@@ -1,12 +1,27 @@
 @use "sass:map";
 
 
+//----------------------------------*\
+// CDS Files
+//----------------------------------*/
+
 //Tokens
-@import 'modules/_cds-variables.scss';
+@import 'cds/_cds-variables.scss';
 
 //Functions
 @import 'functions/_deepmap.scss';
 @import 'functions/_token-functions.scss';
+
+//Helpers
+@import 'cds/_cds-colors.scss';
+@import 'cds/_cds-space.scss';
+@import 'cds/_cds-border.scss';
+@import 'cds/_cds-typography.scss';
+
+//Components
+
+@import 'cds/_cds-notifications.scss';
+@import 'cds/_cds-buttons.scss';
 
 //----------------------------------*\
 // SCSS MIXINS
@@ -42,7 +57,6 @@
 @import 'modules/_typography.scss';
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
-@import 'modules/_notifications.scss';
 
 // Enhancement modules
 @import 'modules/_print.scss';

@@ -11,7 +11,7 @@
 <body>
 
 	<section class="mw8-ns center pa4 ph5-ns">
-		<h1 class="mt0">Utilities</h1>
+		<h1 class="mt0">Utilities & Mixins</h1>
 		<p class="lh-copy">
 			Utilities are simple HTML classes typically scoped to a single CSS property like border-style or
 			background-color. Utilities can be used additively to style an object from scratch or to override a style
@@ -27,7 +27,6 @@
 				<table class="f6 w-100 mw8 center" cellspacing="0">
 					<thead>
 						<tr>
-							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
@@ -35,7 +34,6 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-color-bg($color)</code></pre>
 							</td>
@@ -48,7 +46,6 @@
 						</tr>
 
 						<tr>
-							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-color-border($color)</code></pre>
 							</td>
@@ -61,7 +58,6 @@
 						</tr>
 
 						<tr>
-							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">tbd</code></pre></td>
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-color-border($color)</code></pre>
 							</td>
@@ -81,7 +77,6 @@
 				<table class="f6 w-100 mw8 center" cellspacing="0">
 					<thead>
 						<tr>
-							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
@@ -89,8 +84,6 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-padding-left($space)</code></pre>
 							</td>
@@ -102,8 +95,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-padding-right($space)</code></pre>
 							</td>
@@ -115,8 +106,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-padding-top($space)</code></pre>
 							</td>
@@ -128,8 +117,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-padding-bottom($space)</code></pre>
 							</td>
@@ -141,8 +128,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-margin-left($space)</code></pre>
 							</td>
@@ -154,8 +139,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-margin-right($space)</code></pre>
 							</td>
@@ -167,8 +150,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-margin-top($space)</code></pre>
 							</td>
@@ -180,8 +161,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-margin-bottom($space)</code></pre>
 							</td>
@@ -193,8 +172,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-padding-inset($space)</code></pre>
 							</td>
@@ -207,6 +184,337 @@
 						</tr>
 					</tbody>
 				</table>
+
+				<!-- START Margin Utility Classes -->
+				<h4 class="mb2 mt4">Margin-Left Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Margin-Right Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-right: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Margin-Top Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mt-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-top: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Margin-Bottom Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mr-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-mb-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-bottom: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- END Margin Utility Classes -->
+
+				<!-- START Padding Utility Classes -->
+				<h4 class="mb2 mt4">Padding-Left Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pl-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-left: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Padding-Right Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pr-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-right: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Padding-Top Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pt-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-top: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h4 class="mb2 mt4">Padding-Bottom Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-xxs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 4px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-xs</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 8px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-lg</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 24px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 32px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-xxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 48px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-pb-xxxl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding-bottom: 64px !important;</code></pre></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- END Padding Utility Classes -->
+
+				<!-- START Inset Utility Classes -->
+				<h4 class="mb2 mt4">Inset Utilities</h4>
+				<table class="f6 w-100 mw8 center" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-inset-sm</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding: 12px 12px 12px 12px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-inset-md</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding: 16px 16px 16px 16px !important;</code></pre></td>
+						</tr>
+						<tr>
+							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-inset-xl</code></pre></td>
+							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">padding: 32px 32px 32px 32px !important;</code></pre></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<!-- END Inset Utility Classes -->
 			</section>
 			
 
@@ -215,7 +523,6 @@
 				<table class="f6 w-100 mw8 center" cellspacing="0">
 					<thead>
 						<tr>
-							<th class="fw6 bb b--black-20 tl pb3 pr3">Utility</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Mixin</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">Example</th>
 							<th class="fw6 bb b--black-20 tl pb3 pr3">CSS</th>
@@ -223,8 +530,6 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="pv3 pr3 bb b--black-20">tbd</td>
-	
 							<td class="pv3 pr3 bb b--black-20">
 								<pre><code class="language-scss">@include cds-u-radius($space)</code></pre>
 							</td>
@@ -235,19 +540,6 @@
 								<pre><code class="language-css">border-radius: 3px</code></pre>
 							</td>
 						</tr>
-					</tbody>
-				</table>
-
-				<h4 class="mb2 mt4">Margin Utilities</h4>
-				<table class="f6 w-100 mw8 center" cellspacing="0">
-					
-					<tbody>
-						<tr>
-							<td class="pv3 pr3 bb b--black-20">	<pre><code class="language-css">.cds-u-space-ml-xs</code></pre></td>
-							<td class="pv3 pr3 bb b--black-20"><pre><code class="language-css">margin-left: 8px !important;</code></pre></td>
-							<td class="pv3 pr3 bb b--black-20 w-30"><div class="utility-example bg-gold"><div class="square-xl ba bg-white cds-u-space-pr-xs"></div></div></td>
-						</tr>
-		
 					</tbody>
 				</table>
 			</section>
@@ -463,8 +755,9 @@
 
 	<!-- Scripts -->
 	<script src="js/vendor.js"></script>
+	<!-- <script src="js/another-file.js"></script> -->
 	<!-- <script src="js/detects.js"></script>
-	<script src="js/another-file.js"></script>
+	
 	<script src="js/main.polyfills.js"></script> -->
 </body>
 

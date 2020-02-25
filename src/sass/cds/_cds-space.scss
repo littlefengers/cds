@@ -1,0 +1,142 @@
+//Space - Functions
+
+@function get-space($space-size){
+  @return map-get-deep($cds-tokens,"space", #{$space-size}); 
+};
+
+//TODO Get rid off?
+@function get-space-inset($space-size){
+  @return map-get-deep($cds-tokens,"space", "inset", #{$space-size}); 
+};
+
+
+//Space - Mixins
+
+//Space - Margin Mixins
+@mixin u-margin-left($space-size, $important: null) {
+  @if ($important == true) {
+    margin-left: get-space($space-size) !important;
+  } @else {
+    margin-left: get-space($space-size);
+  }
+}
+@mixin u-margin-right($space-size, $important: null) {
+  @if ($important == true) {
+    margin-right: get-space($space-size) !important;
+  } @else {
+    margin-right: get-space($space-size);
+  }
+}
+
+@mixin u-margin-top($space-size, $important: null) {
+  @if ($important == true) {
+    margin-top: get-space($space-size) !important;
+  } @else {
+    margin-top: get-space($space-size);
+  }
+}
+
+@mixin u-margin-bottom($space-size, $important: null) {
+  @if ($important == true) {
+    margin-bottom: get-space($space-size) !important;
+  } @else {
+    margin-bottom: get-space($space-size);
+  }
+}
+
+//Space - Padding Mixins
+
+@mixin u-padding-left($space-size, $important: null) {
+  @if ($important == true) {
+    padding-left: get-space($space-size) !important;
+  } @else {
+    padding-left: get-space($space-size);
+  }
+}
+@mixin u-padding-right($space-size, $important: null) {
+  @if ($important == true) {
+    padding-right: get-space($space-size) !important;
+  } @else {
+    padding-right: get-space($space-size);
+  }
+}
+
+@mixin u-padding-top($space-size, $important: null) {
+  @if ($important == true) {
+    padding-top: get-space($space-size) !important;
+  } @else {
+    padding-top: get-space($space-size);
+  }
+}
+
+@mixin u-padding-bottom($space-size, $important: null) {
+  @if ($important == true) {
+    padding-bottom: get-space($space-size) !important;
+  } @else {
+    padding-bottom: get-space($space-size);
+  }
+}
+
+//Space - Inset
+
+@mixin u-padding-inset($space-size, $important: null) {
+    @if ($important == true) {
+      padding: get-space-inset($space-size) !important;
+    } @else {
+      padding: get-space-inset($space-size);
+    }
+  }
+
+//Space Utilities
+
+$space-map: map-get-deep($cds-tokens, "space");
+
+@each $name, $space in $space-map {
+  @if (type-of($space) != map) {
+    //Padding
+
+    .cds-u-space-pl-#{$name} {
+      @include u-padding-left($name, true);
+    }
+
+    .cds-u-space-pr-#{$name} {
+      @include u-padding-right($name, true);
+    }
+
+    .cds-u-space-pt-#{$name} {
+      @include u-padding-top($name, true);
+    }
+    .cds-u-space-pb-#{$name} {
+      @include u-padding-bottom($name, true);
+    }
+
+    //Margin
+
+    .cds-u-space-ml-#{$name} {
+      @include u-margin-left($name, true);
+    }
+
+    .cds-u-space-mr-#{$name} {
+      @include u-margin-right($name, true);
+    }
+
+    .cds-u-space-mt-#{$name} {
+      @include u-margin-top($name, true);
+    }
+
+    .cds-u-space-mb-#{$name} {
+      @include u-margin-bottom($name, true);
+    }
+  }
+}
+
+$space-inset-map: map-get-deep($cds-tokens, "space", "inset");
+
+@each $name, $space in $space-inset-map {
+    @if (type-of($space) != map) {
+
+      .cds-u-space-inset-#{$name} {
+        @include u-padding-inset($name, true);
+      }
+    }
+  }
