@@ -6,22 +6,7 @@
 //----------------------------------*/
 
 //Tokens
-@import 'cds/_cds-variables.scss';
-
-//Functions
-@import 'functions/_deepmap.scss';
-@import 'functions/_token-functions.scss';
-
-//Helpers
-@import 'cds/_cds-colors.scss';
-@import 'cds/_cds-space.scss';
-@import 'cds/_cds-border.scss';
-@import 'cds/_cds-typography.scss';
-
-//Components
-
-@import 'cds/_cds-notifications.scss';
-@import 'cds/_cds-buttons.scss';
+@import 'cds/_cds.scss';
 
 //----------------------------------*\
 // SCSS MIXINS

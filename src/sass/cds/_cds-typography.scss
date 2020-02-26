@@ -73,23 +73,6 @@
   }
 }
 
-@mixin t-bodyFont {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  @include cds-u-font-line-height("md");
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0; //Added this for collapsed margins
-}
-
-
 //Helper classes
 
 //Font size only
