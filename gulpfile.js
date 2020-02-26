@@ -7,10 +7,10 @@ var settings = {
 	clean: false,
 	clearCache: true,
 	scripts: true,
-	polyfills: true,
+	polyfills: false,
 	styles: true,
-	svgs: true,
-	copy: true,
+	svgs: false,
+	docs: true,
 	tokens: true,
 	reload: true
 };
@@ -29,15 +29,15 @@ var paths = {
 		output: 'dist/js/'
 	},
 	styles: {
-		input: 'src/sass/**/*.{scss,sass}',
+		input: 'src/scss/**/*.{scss,sass}',
 		output: 'dist/css/'
 	},
 	svgs: {
 		input: 'src/svg/*.svg',
 		output: 'dist/svg/'
 	},
-	copy: {
-		input: 'src/copy/**/*',
+	docs: {
+		input: 'src/doc/**/*',
 		output: 'dist/'
 	},
 	designtokens: {
@@ -257,14 +257,14 @@ var buildSVGs = function (done) {
 };
 
 // Copy static files into output folder
-var copyFiles = function (done) {
+var copyDocs = function (done) {
 
 	// Make sure this feature is activated before running
-	if (!settings.copy) return done();
+	if (!settings.docs) return done();
 
 	// Copy static files
-	return src(paths.copy.input)
-		.pipe(dest(paths.copy.output));
+	return src(paths.docs.input)
+		.pipe(dest(paths.docs.output));
 
 };
 
@@ -335,7 +335,7 @@ exports.default = series(
 		buildStyles,
 		// copyTokens,
 		// buildSVGs,
-		copyFiles
+		copyDocs
 	)
 );
 
@@ -347,4 +347,6 @@ exports.watch = series(
 	watchSource
 );
 
+//This copyies from a different folder
+//This needs to be changed
 exports.copyTokens = series(copyTokens);

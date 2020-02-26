@@ -1,0 +1,21 @@
+@use "sass:map";
+
+//----------------------------------*\
+// CDS Files
+//----------------------------------*/
+
+@import 'cds/_cds.scss';
+
+//----------------------------------*\
+// OBJECTS & MODULES
+//----------------------------------*/
+
+@import 'modules/_docs.scss';
+
+//----------------------------------*\
+// VENDOR
+//----------------------------------*/
+
+@import 'vendor/prism/_prism.scss';
+@import '../../node_modules/tachyons-sass/tachyons.scss';
+
