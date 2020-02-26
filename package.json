@@ -1,26 +1,16 @@
 {
 	"name": "costco-componenent-test",
 	"version": "0.0.1",
-	"description": "A description for your project.",
-	"main": "./dist/your-main-js-file.js",
+	"description": "Costco helper utilities using CDS Tokens",
+	"main": "./dist/docs",
 	"author": {
-		"name": "YOUR NAME",
-		"url": "http://link-to-your-website.com"
+		"name": "Feng Tien",
+		"url": "http://www.fengtien.co"
 	},
-	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "http://link-to-your-git-repo.com"
+		"url": "https://github.com/littlefengers/component-testing"
 	},
-	"boilerplate": {
-		"version": "2.2.4",
-		"url": "https://gomakethings.com",
-		"repo": "http://github.com/cferdinandi/gulp-boilerplate"
-	},
-	"browserslist": [
-		"last 2 versions",
-		"> 0.25%"
-	],
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",
 		"browser-sync": "^2.26.7",
@@ -45,7 +35,6 @@
 		"jshint": "^2.11.0",
 		"jshint-stylish": "^2.2.1",
 		"lazypipe": "^1.0.2",
-		"tachyons": "^4.10.0"
 	},
 	"dependencies": {
 		"tachyons-sass": "^4.9.5"
