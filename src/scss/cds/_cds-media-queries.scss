@@ -1,0 +1,30 @@
+//TODO NEED TO add docs
+
+@function get-bp($breakpoint)
+{
+    @return map-get-deep($cds-tokens,"bp", #{$breakpoint});
+}
+
+@mixin cds-u-mq-min-sm
+{
+    @media (min-width: get-bp("sm"))
+    {
+        @content;
+    }
+}
+
+@mixin cds-u-mq-min-md
+{
+    @media (min-width: get-bp("md"))
+    {
+        @content;
+    }
+}
+
+@mixin cds-u-mq-min-lg
+{
+    @media (min-width: get-bp("lg"))
+    {
+        @content;
+    }
+}

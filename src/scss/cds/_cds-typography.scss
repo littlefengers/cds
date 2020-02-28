@@ -55,7 +55,8 @@
     "line-height",
     "#{$type}-mobile"
   );
-  @media (min-width: get-bp("lg")) {
+  @include cds-u-min-lg
+  {
     font-size: get-deepest-token(
       $cds-tokens,
       "type",

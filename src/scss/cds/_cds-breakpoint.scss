@@ -1,4 +1,0 @@
-@function get-bp($breakpoint)
-{
-    @return map-get-deep($cds-tokens,"bp", #{$breakpoint});
-}
