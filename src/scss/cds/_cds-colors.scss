@@ -1,37 +1,59 @@
 //Color Functions
 
-@function get-color($variant, $attribute:null)
-{
-  @if ($attribute == null){
-    @return map-get-deep($cds-tokens,"color",#{$variant}); 
+@function get-color($variant, $attribute: null) {
+  @if ($attribute == null) {
+    @return map-get-deep($cds-tokens, "color", #{$variant});
   } @else {
-    @return map-get-deep($cds-tokens,"color",#{$attribute}, #{$variant});
+    @return map-get-deep($cds-tokens, "color", #{$attribute}, #{$variant});
   }
-};
-
+}
 
 //Color Mixins
 
-@mixin u-color-bg($color, $important: null) {
+@mixin u-color-bg($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    background-color: get-color($color) !important;
+    background-color: get-color($color, $attribute) !important;
   } @else {
-    background-color: get-color($color);
+    background-color: get-color($color, $attribute);
   }
 }
 
-@mixin u-color-border($color, $important: null) {
+@mixin u-color-border($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    border-color: get-color($color) !important;
+    border-color: get-color($color, $attribute) !important;
   } @else {
-    border-color: get-color($color);
+    border-color: get-color($color, $attribute);
   }
 }
 
-@mixin u-color-text($color, $important: null) {
+@mixin u-color-text($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    color: get-color($color) !important;
+    color: get-color($color, $attribute) !important;
   } @else {
-    color: get-color($color);
+    color: get-color($color, $attribute);
+  }
+}
+
+//Color Utilities
+//TODO Add to docs
+
+$color-map: map-get-deep($cds-tokens, "color");
+$color-text-map: map-get-deep($cds-tokens, "color", "text");
+
+@each $name, $color in $color-map {
+  @if (type-of($color) != map) {
+    .cds-u-color-text-#{$name} {
+      @include u-color-text($name, true);
+    }
+
+    .cds-u-color-bg-#{$name} {
+      @include u-color-bg($name, true);
+    }
+  } @else if (type-of($color) == map) {
+    @each $inner-name, $inner-color in $color-text-map {
+      .cds-u-color-text-#{$inner-name} {
+        @include u-color-text($inner-name, true, $name);
+      }
+    }
   }
 }

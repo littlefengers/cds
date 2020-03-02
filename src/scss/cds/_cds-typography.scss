@@ -55,7 +55,7 @@
     "line-height",
     "#{$type}-mobile"
   );
-  @include cds-u-min-lg
+  @include cds-u-mq-min-lg
   {
     font-size: get-deepest-token(
       $cds-tokens,
