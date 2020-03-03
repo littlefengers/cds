@@ -92,7 +92,6 @@ var uglify = require('gulp-terser');
 var optimizejs = require('gulp-optimize-js');
 
 // Styles
-var Fiber = require("fibers");
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var prefix = require('autoprefixer');
@@ -103,9 +102,6 @@ var svgmin = require('gulp-svgmin');
 
 // BrowserSync
 var browserSync = require('browser-sync');
-
-//Sass options
-sass.compiler = require('sass');
 
 //Adding gulp cache
 var cache = require('gulp-cache');
@@ -210,8 +206,7 @@ var buildStyles = function (done) {
 	return src(paths.styles.input)
 		.pipe(sass({
 			outputStyle: 'expanded',
-			sourceComments: true,
-			fiber: Fiber
+			sourceComments: true
 		}))
 		// .pipe(prefix({
 		// 	cascade: true,
@@ -315,7 +310,7 @@ var reloadBrowser = function (done) {
 
 // Watch for changes
 var watchSource = function (done) {
-	watch(paths.input, series(exports.default,reloadBrowser));
+	watch(paths.input, series(exports.default, reloadBrowser));
 	done();
 };
 
