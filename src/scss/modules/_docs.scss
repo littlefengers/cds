@@ -1,14 +1,7 @@
-
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    @include cds-u-font-line-height("md");
-    @include u-color-text("gray-900");
-}
-
-.square-xl
-{
-    width: get-space('xl');
-    height: get-space('xl');
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  @include cds-u-font-line-height("md");
+  @include u-color-text("gray-900");
 }

@@ -38,7 +38,7 @@
 //TODO Add to docs
 
 $color-map: map-get-deep($cds-tokens, "color");
-$color-text-map: map-get-deep($cds-tokens, "color", "text");
+$color-text-map: map-get-deep($cds-tokens, "color", "text"); //TODO refactor to not have to use this.
 
 @each $name, $color in $color-map {
   @if (type-of($color) != map) {
