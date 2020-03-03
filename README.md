@@ -15,8 +15,7 @@
 
 ## Usage
 
-**Dart-Sass is REQUIRED**.
-LibSass is the default for node-sass. Make sure to update.
+**Dart-Sass is Recommended**.
 
 Copy 'src/scss/cds' folder into where you store rest of your scss files, then import _cds.scss
 
