@@ -41,42 +41,19 @@
 }
 
 @mixin cds-u-typeset($type) {
-  font-size: get-deepest-token(
-    $cds-tokens,
-    "type",
-    "font",
-    "size",
-    "#{$type}-mobile"
-  );
-  line-height: get-deepest-token(
-    $cds-tokens,
-    "type",
-    "font",
-    "line-height",
-    "#{$type}-mobile"
-  );
+  font-size: map-get-deep($cds-tokens, "type","font","#{$type}-mobile","size");
+  line-height: map-get-deep($cds-tokens, "type","font","#{$type}-mobile","line-height");
   @include cds-u-mq-min-lg
   {
-    font-size: get-deepest-token(
-      $cds-tokens,
-      "type",
-      "font",
-      "size",
-      "#{$type}-desktop"
-    );
-    line-height: get-deepest-token(
-      $cds-tokens,
-      "type",
-      "font",
-      "line-height",
-      "#{$type}-desktop"
-    );
+    font-size: map-get-deep($cds-tokens, "type","font","#{$type}-desktop","size");
+    line-height: map-get-deep($cds-tokens, "type","font","#{$type}-desktop","line-height");
   }
 }
 
 //Helper classes
 
-//Font size only
+//
+
 
 .cds-font-size-1 {
   @include cds-u-font-size(1, true);
