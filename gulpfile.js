@@ -37,7 +37,7 @@ var paths = {
 		output: 'dist/svg/'
 	},
 	docs: {
-		input: 'src/doc/**/*',
+		input: 'src/docs/**/*',
 		output: 'dist/'
 	},
 	designtokens: {
@@ -322,7 +322,7 @@ var watchSource = function (done) {
 // Default task
 // gulp
 exports.default = series(
-	cleanDist,
+	// cleanDist,
 	clearCache,
 	parallel(
 		buildScripts,
