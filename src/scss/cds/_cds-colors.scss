@@ -1,5 +1,6 @@
 //Color Functions
 
+
 @function get-color($variant, $attribute: null) {
   @if ($attribute == null) {
     @return map-get-deep($cds-tokens, "color", #{$variant});
@@ -7,6 +8,8 @@
     @return map-get-deep($cds-tokens, "color", #{$attribute}, #{$variant});
   }
 }
+
+
 
 //Color Mixins
 
