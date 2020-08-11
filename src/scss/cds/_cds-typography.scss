@@ -52,57 +52,37 @@
 
 //Helper classes
 
-//
+// Font Size
+$font-size: map-get-deep($cds-tokens, "font", "size");
 
-
-.cds-font-size-1 {
-  @include cds-u-font-size(1, true);
+@each $name, $size  in $font-size { 
+  @if (type-of($size) != map) {
+      .cds-font-size-#{$name}{
+        @include cds-u-font-size(#{$name}, true);
+    }   
+  }
 }
 
-.cds-font-size-2 {
-  @include cds-u-font-size(2, true);
+//Line Height only
+$line-height: map-get-deep($cds-tokens, "font", "line-height");
+
+@each $name, $height in $line-height {
+  @if (type-of($height) != map) {
+    .cds-line-height-#{$name}{
+      @include cds-u-font-line-height(#{$name}, true);
+    }
+  }
 }
 
-.cds-font-size-3 {
-  @include cds-u-font-size(3, true);
-}
+//Font Weight
+$font-weight: map-get-deep($cds-tokens, "font", "weight");
 
-.cds-font-size-4 {
-  @include cds-u-font-size(4, true);
-}
-
-.cds-font-size-5 {
-  @include cds-u-font-size(5, true);
-}
-
-.cds-font-size-6 {
-  @include cds-u-font-size(6, true);
-}
-
-.cds-font-size-7 {
-  @include cds-u-font-size(7, true);
-}
-
-//Line height only
-
-.cds-line-height-xl
-{
-	@include cds-u-font-line-height("xl", true)
-}
-
-.cds-line-height-lg
-{
-	@include cds-u-font-line-height("lg", true)
-}
-
-.cds-line-height-md
-{
-	@include cds-u-font-line-height("md", true)
-}
-
-.cds-line-height-sm
-{
-	@include cds-u-font-line-height("sm", true )
+@each $name, $weight in $font-weight {
+  @if (type-of($weight) != map) {
+    .cds-u-font-#{$name}{
+      @include cds-u-font-weight(#{$name});
+    }
+  }
 }
 
 //Font Size and line-height
@@ -136,12 +116,4 @@
 
 .cds-body-copy {
   @include cds-u-typeset("body-copy");
-}
-
-.cds-u-font-bold {
-  @include cds-u-font-weight("bold");
-}
-
-.cds-u-font-default {
-  @include cds-u-font-weight("default");
 }
