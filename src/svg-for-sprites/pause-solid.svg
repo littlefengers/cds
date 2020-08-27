@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Visual/Icons/Carousel/Pause</title>
+    <defs>
+        <path d="M18.7165775,2 C18.9378342,2 19.1176471,2.17933333 19.1176471,2.4 L19.1176471,2.4 L19.1176471,21.6 C19.1176471,21.8206667 18.9378342,22 18.7165775,22 L18.7165775,22 L13.9839572,22 C13.7627005,22 13.5828877,21.8206667 13.5828877,21.6 L13.5828877,21.6 L13.5828877,2.4 C13.5828877,2.17933333 13.7627005,2 13.9839572,2 L13.9839572,2 Z M10.1336898,2 C10.3549465,2 10.5347594,2.17933333 10.5347594,2.4 L10.5347594,2.4 L10.5347594,21.6 C10.5347594,21.8206667 10.3549465,22 10.1336898,22 L10.1336898,22 L5.40106952,22 C5.17981283,22 5,21.8206667 5,21.6 L5,21.6 L5,2.4 C5,2.17933333 5.17981283,2 5.40106952,2 L5.40106952,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Visual/Icons/Carousel/Pause" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="🎨-Icon-Color" fill="#333333" xlink:href="#path-1"></use>
+    </g>
+</svg>
