@@ -52,6 +52,10 @@ $color-text-map: map-get-deep($cds-tokens, "color", "text"); //TODO refactor to 
     .cds-u-color-bg-#{$name} {
       @include u-color-bg($name, true);
     }
+
+    .cds-u-color-border-#{$name} {
+      @include u-color-border($name, true);
+    }
   } @else if (type-of($color) == map) {
     @each $inner-name, $inner-color in $color-text-map {
       .cds-u-color-text-#{$inner-name} {
