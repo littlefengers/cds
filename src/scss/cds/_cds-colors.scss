@@ -1,7 +1,7 @@
 //Color Functions
 
 
-@function get-color($variant, $attribute: null) {
+@function cds-get-color($variant, $attribute: null) {
   @if ($attribute == null) {
     @return map-get-deep($cds-tokens, "color", #{$variant});
   } @else {
@@ -9,31 +9,29 @@
   }
 }
 
-
-
 //Color Mixins
 
-@mixin u-color-bg($color, $important: null, $attribute: null) {
+@mixin cds-color-bg($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    background-color: get-color($color, $attribute) !important;
+    background-color: cds-get-color($color, $attribute) !important;
   } @else {
-    background-color: get-color($color, $attribute);
+    background-color: cds-get-color($color, $attribute);
   }
 }
 
-@mixin u-color-border($color, $important: null, $attribute: null) {
+@mixin cds-color-border($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    border-color: get-color($color, $attribute) !important;
+    border-color: cds-get-color($color, $attribute) !important;
   } @else {
-    border-color: get-color($color, $attribute);
+    border-color: cds-get-color($color, $attribute);
   }
 }
 
-@mixin u-color-text($color, $important: null, $attribute: null) {
+@mixin cds-color-text($color, $important: null, $attribute: null) {
   @if ($important == true) {
-    color: get-color($color, $attribute) !important;
+    color: cds-get-color($color, $attribute) !important;
   } @else {
-    color: get-color($color, $attribute);
+    color: cds-get-color($color, $attribute);
   }
 }
 
@@ -46,20 +44,20 @@ $color-text-map: map-get-deep($cds-tokens, "color", "text"); //TODO refactor to 
 @each $name, $color in $color-map {
   @if (type-of($color) != map) {
     .cds-u-color-text-#{$name} {
-      @include u-color-text($name, true);
+      @include cds-color-text($name, true);
     }
 
     .cds-u-color-bg-#{$name} {
-      @include u-color-bg($name, true);
+      @include cds-color-bg($name, true);
     }
 
     .cds-u-color-border-#{$name} {
-      @include u-color-border($name, true);
+      @include cds-color-border($name, true);
     }
   } @else if (type-of($color) == map) {
     @each $inner-name, $inner-color in $color-text-map {
       .cds-u-color-text-#{$inner-name} {
-        @include u-color-text($inner-name, true, $name);
+        @include cds-color-text($inner-name, true, $name);
       }
     }
   }

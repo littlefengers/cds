@@ -8,12 +8,12 @@
 
 //Radius
 
-@mixin u-radius($radius) {
+@mixin cds-radius($radius) {
   border-radius: get-radius($radius);
 }
 
 //Border Width
 
-@mixin u-border-width($border-width) {
+@mixin cds-border-width($border-width) {
   border-width: get-border-width($border-width);
 }
