@@ -2,6 +2,6 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  @include cds-u-font-line-height("md");
-  @include u-color-text("gray-900");
+  @include cds-font-line-height("md");
+  @include cds-color-text("gray-900");
 }
