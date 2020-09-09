@@ -13,8 +13,8 @@ USAGE
 {
   cursor: pointer;
   vertical-align: middle;
-  @include u-padding-left(md);
-  @include u-padding-right(md);
+  @include cds-padding-left(md);
+  @include cds-padding-right(md);
   margin:0;
   text-decoration: none;
   display:inline-block;

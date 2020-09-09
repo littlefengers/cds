@@ -20,7 +20,7 @@
     margin-left: get-space($space-size);
   }
 }
-@mixin u-margin-right($space-size, $important: null) {
+@mixin cds-margin-right($space-size, $important: null) {
   @if ($important == true) {
     margin-right: get-space($space-size) !important;
   } @else {
@@ -28,7 +28,7 @@
   }
 }
 
-@mixin u-margin-top($space-size, $important: null) {
+@mixin cds-margin-top($space-size, $important: null) {
   @if ($important == true) {
     margin-top: get-space($space-size) !important;
   } @else {
@@ -36,7 +36,7 @@
   }
 }
 
-@mixin u-margin-bottom($space-size, $important: null) {
+@mixin cds-margin-bottom($space-size, $important: null) {
   @if ($important == true) {
     margin-bottom: get-space($space-size) !important;
   } @else {
@@ -46,14 +46,14 @@
 
 //Space - Padding Mixins
 
-@mixin u-padding-left($space-size, $important: null) {
+@mixin cds-padding-left($space-size, $important: null) {
   @if ($important == true) {
     padding-left: get-space($space-size) !important;
   } @else {
     padding-left: get-space($space-size);
   }
 }
-@mixin u-padding-right($space-size, $important: null) {
+@mixin cds-padding-right($space-size, $important: null) {
   @if ($important == true) {
     padding-right: get-space($space-size) !important;
   } @else {
@@ -61,7 +61,7 @@
   }
 }
 
-@mixin u-padding-top($space-size, $important: null) {
+@mixin cds-padding-top($space-size, $important: null) {
   @if ($important == true) {
     padding-top: get-space($space-size) !important;
   } @else {
@@ -69,7 +69,7 @@
   }
 }
 
-@mixin u-padding-bottom($space-size, $important: null) {
+@mixin cds-padding-bottom($space-size, $important: null) {
   @if ($important == true) {
     padding-bottom: get-space($space-size) !important;
   } @else {
@@ -79,7 +79,7 @@
 
 //Space - Inset
 
-@mixin u-padding-inset($space-size, $important: null) {
+@mixin cds-padding-inset($space-size, $important: null) {
     @if ($important == true) {
       padding: get-space-inset($space-size) !important;
     } @else {
@@ -96,18 +96,18 @@ $space-map: map-get-deep($cds-tokens, "space");
     //Padding
 
     .cds-u-space-pl-#{$name} {
-      @include u-padding-left($name, true);
+      @include cds-padding-left($name, true);
     }
 
     .cds-u-space-pr-#{$name} {
-      @include u-padding-right($name, true);
+      @include cds-padding-right($name, true);
     }
 
     .cds-u-space-pt-#{$name} {
-      @include u-padding-top($name, true);
+      @include cds-padding-top($name, true);
     }
     .cds-u-space-pb-#{$name} {
-      @include u-padding-bottom($name, true);
+      @include cds-padding-bottom($name, true);
     }
 
     //Margin
@@ -117,15 +117,15 @@ $space-map: map-get-deep($cds-tokens, "space");
     }
 
     .cds-u-space-mr-#{$name} {
-      @include u-margin-right($name, true);
+      @include cds-margin-right($name, true);
     }
 
     .cds-u-space-mt-#{$name} {
-      @include u-margin-top($name, true);
+      @include cds-margin-top($name, true);
     }
 
     .cds-u-space-mb-#{$name} {
-      @include u-margin-bottom($name, true);
+      @include cds-margin-bottom($name, true);
     }
   }
 }
@@ -136,7 +136,7 @@ $space-inset-map: map-get-deep($cds-tokens, "space", "inset");
     @if (type-of($space) != map) {
 
       .cds-u-space-inset-#{$name} {
-        @include u-padding-inset($name, true);
+        @include cds-padding-inset($name, true);
       }
     }
   }
