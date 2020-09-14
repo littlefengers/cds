@@ -1,0 +1,9 @@
+/*
+Status Bar
+*/
+.status-bar-container {
+    @include cds-padding-inset("sm");// need cds-space-inset token and space inset variant for status bar with values 12px 15px 16px 15px
+    @include cds-color-bg("gray-100");
+    border: map-get-deep($cds-tokens,"buttons","size","outline-secondary","border-width") solid #ccc;
+    @include cds-radius("md");
+  }
