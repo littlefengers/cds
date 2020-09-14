@@ -41,6 +41,7 @@
     "react-is": "^16.13.1"
   },
   "dependencies": {
+    "jquery": "^3.5.1",
     "tachyons-sass": "^4.9.5"
   },
   "scripts": {
