@@ -13,7 +13,7 @@
 //Space - Mixins
 
 //Space - Margin Mixins
-@mixin u-margin-left($space-size, $important: null) {
+@mixin cds-margin-left($space-size, $important: null) {
   @if ($important == true) {
     margin-left: get-space($space-size) !important;
   } @else {
@@ -41,6 +41,26 @@
     margin-bottom: get-space($space-size) !important;
   } @else {
     margin-bottom: get-space($space-size);
+  }
+}
+
+@mixin cds-margin-y($space-size, $important: null) {
+  @if ($important == true) {
+    margin-top: get-space($space-size) !important;
+    margin-bottom: get-space($space-size) !important;
+  } @else {
+    margin-top: get-space($space-size);
+    margin-bottom: get-space($space-size);
+  }
+}
+
+@mixin cds-margin-x($space-size, $important: null) {
+  @if ($important == true) {
+    margin-left: get-space($space-size) !important;
+    margin-right: get-space($space-size) !important;
+  } @else {
+    margin-left: get-space($space-size);
+    margin-right: get-space($space-size);
   }
 }
 
@@ -77,6 +97,26 @@
   }
 }
 
+@mixin cds-padding-y($space-size, $important: null) {
+  @if ($important == true) {
+    padding-top: get-space($space-size) !important;
+    padding-bottom: get-space($space-size) !important;
+  } @else {
+    padding-top: get-space($space-size);
+    padding-bottom: get-space($space-size);
+  }
+}
+
+@mixin cds-padding-x($space-size, $important: null) {
+  @if ($important == true) {
+    padding-left: get-space($space-size) !important;
+    padding-right: get-space($space-size) !important;
+  } @else {
+    padding-left: get-space($space-size);
+    padding-right: get-space($space-size);
+  }
+}
+
 //Space - Inset
 
 @mixin cds-padding-inset($space-size, $important: null) {
@@ -85,9 +125,12 @@
     } @else {
       padding: get-space-inset($space-size);
     }
-  }
+}
 
 //Space Utilities
+
+
+
 
 $space-map: map-get-deep($cds-tokens, "space");
 
@@ -110,10 +153,18 @@ $space-map: map-get-deep($cds-tokens, "space");
       @include cds-padding-bottom($name, true);
     }
 
+    .cds-u-space-py-#{$name} {
+      @include cds-padding-y($name, true);
+    }
+
+    .cds-u-space-px-#{$name} {
+      @include cds-padding-x($name, true);
+    }
+
     //Margin
 
     .cds-u-space-ml-#{$name} {
-      @include u-margin-left($name, true);
+      @include cds-margin-left($name, true);
     }
 
     .cds-u-space-mr-#{$name} {
@@ -126,6 +177,12 @@ $space-map: map-get-deep($cds-tokens, "space");
 
     .cds-u-space-mb-#{$name} {
       @include cds-margin-bottom($name, true);
+    }
+    .cds-u-space-my-#{$name} {
+      @include cds-margin-y($name, true);
+    }
+    .cds-u-space-mx-#{$name} {
+      @include cds-margin-x($name, true);
     }
   }
 }
