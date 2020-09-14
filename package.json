@@ -31,7 +31,8 @@
 		"gulp-terser": "^1.2.0",
 		"jshint": "^2.11.0",
 		"jshint-stylish": "^2.2.1",
-		"lazypipe": "^1.0.2"
+		"lazypipe": "^1.0.2",
+		"sassdoc": "^2.7.3"
 	},
 	"dependencies": {
 		"tachyons-sass": "^4.9.5"

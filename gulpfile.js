@@ -12,7 +12,8 @@ var settings = {
 	svgs: false,
 	docs: true,
 	tokens: true,
-	reload: true
+	reload: true,
+	sassdocs: true
 };
 
 
@@ -105,6 +106,10 @@ var browserSync = require('browser-sync');
 
 //Adding gulp cache
 var cache = require('gulp-cache');
+
+//SassDocs
+var sassdoc = require('sassdoc');
+
 
 /**
  * Gulp Tasks
@@ -275,6 +280,19 @@ var copyTokens = function (done) {
 
 };
 
+var createSassDocs = function (done)
+{
+	var options = {
+		dest: 'dist/sassdocs',
+	  };
+	
+	// Make sure this feature is activated before running
+	if (!settings.tokens) return done();
+
+	return src(paths.styles.input)
+	  .pipe(sassdoc(options));
+}
+
 //Clears cache
 
 var clearCache = function (done){
@@ -314,6 +332,10 @@ var watchSource = function (done) {
 	done();
 };
 
+var watchSassDoc = function (done) {
+	watch(paths.input, series(createSassDocs, reloadBrowser));
+	done();
+};
 
 /**
  * Export Tasks
@@ -345,3 +367,10 @@ exports.watch = series(
 //This copyies from a different folder
 //This needs to be changed
 exports.copyTokens = series(copyTokens);
+
+
+exports.sassDocs = series(
+	createSassDocs,
+	startServer,
+	watchSassDoc
+);

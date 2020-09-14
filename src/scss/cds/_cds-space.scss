@@ -1,18 +1,37 @@
-//Space - Functions
+// Margin auto
 
+// ----------------------------------------------------------------------
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Space
+/// @param {space} $space - Space Value
+////
+
+//Spacing Functions
+
+/// @return {$space} - spacing value
 @function get-space($space-size){
   @return map-get-deep($cds-tokens,"space", #{$space-size}); 
 };
 
-//TODO Get rid off?
+/// @return {$space} - spacing inset value
 @function get-space-inset($space-size){
   @return map-get-deep($cds-tokens,"space", "inset", #{$space-size}); 
 };
 
-
 //Space - Mixins
 
 //Space - Margin Mixins
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @output margin-left: 16px;
+/// @example scss - Add md size margin-left
+/// .foo {
+///   @include cds-margin-left(md)
+///  }
+///
 @mixin cds-margin-left($space-size, $important: null) {
   @if ($important == true) {
     margin-left: get-space($space-size) !important;
@@ -20,6 +39,14 @@
     margin-left: get-space($space-size);
   }
 }
+
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss - Add sm size margin-left
+/// .foo {
+///   @include cds-margin-right(sm)
+///  }
+///
 @mixin cds-margin-right($space-size, $important: null) {
   @if ($important == true) {
     margin-right: get-space($space-size) !important;
@@ -28,6 +55,13 @@
   }
 }
 
+/// @param {space} $space - Space Value
+/// @param {important} $important [false] - Add !important
+/// @example scss - Add sm size margin-left
+/// .foo {
+///   @include cds-margin-left(sm)
+///  }
+///
 @mixin cds-margin-top($space-size, $important: null) {
   @if ($important == true) {
     margin-top: get-space($space-size) !important;
@@ -36,6 +70,13 @@
   }
 }
 
+/// @param {space} $space - Space Value
+/// @param {important} $important [false] - Add !important
+/// @example scss - Add sm size margin-left
+/// .foo {
+///   @include cds-margin-left(sm)
+///  }
+///
 @mixin cds-margin-bottom($space-size, $important: null) {
   @if ($important == true) {
     margin-bottom: get-space($space-size) !important;
@@ -44,6 +85,13 @@
   }
 }
 
+/// @param {space} $space - Space Value
+/// @param {important} $important [false] - Add !important
+/// @example scss - Add sm size margin-left
+/// .foo {
+///   @include cds-margin-left(sm)
+///  }
+///
 @mixin cds-margin-y($space-size, $important: null) {
   @if ($important == true) {
     margin-top: get-space($space-size) !important;
@@ -54,6 +102,13 @@
   }
 }
 
+/// @param {space} $space - Space Value
+/// @param {important} $important [false] - Add !important
+/// @example scss - Add sm size margin-left
+/// .foo {
+///   @include cds-margin-left(sm)
+///  }
+///
 @mixin cds-margin-x($space-size, $important: null) {
   @if ($important == true) {
     margin-left: get-space($space-size) !important;
