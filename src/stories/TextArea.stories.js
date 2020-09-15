@@ -1,12 +1,12 @@
 import "../../dist/css/style.css";
-//import {character_count} from '../js/utility/utility.js';
+import $ from "jquery";
+import {character_count} from './utility/utility.js';
 
 export default{
     title: 'TextArea',
 }; 
 
 export function TextArea(){ 
-
     const headerElement = document.createElement('h4');
     headerElement.innerHTML = 'Textarea (countable characters)';
     //line height is supposed to be 1.1, margin top/bottom should have been 10px, 
@@ -29,10 +29,25 @@ export function TextArea(){
     textAreaElement.name = "textarea-name";
     textAreaElement.maxLength = "180";
     textAreaElement.style = "height:auto;";
-    //textAreaElement.addEventListener('onfocus',character_count('#textarea-character-count', '#textarea-id'),false);
-   // textAreaElement.addEventListener('onblur', "javasript:void(0);");
 
+    $(textAreaElement).on('input',function(){
+        character_count('#textarea-character-count', '#textarea-id');
+    });
+
+    $(textAreaElement).on('blur',function(){
+        javasript:void(0);
+    });
+
+    $(textAreaElement).focusin(function() {
+        $(labelElement).addClass("active");
+    }).focusout(function() {
+        if($(this).val().length === 0) {
+            $(labelElement).removeClass("active");
+        }
+    });
+ 
     labelElement.htmlFor = "textarea-id";
+    labelElement.id = "inputLabel"; 
     //don't have mergin-bottom: 5px, 
     labelElement.className = "fw4-ns input-field-v2 label-outline";
     labelElement.innerHTML = "Textarea Label";
