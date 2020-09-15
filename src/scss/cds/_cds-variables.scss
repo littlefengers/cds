@@ -1,7 +1,7 @@
 
 /*
   Do not edit directly
-  Generated on Fri, 14 Aug 2020 14:33:45 GMT
+  Generated on Fri, 11 Sep 2020 23:50:41 GMT
 */
 
 $cds-bp-sm: 320px !default;
@@ -37,7 +37,7 @@ $cds-color-text-medium: #5f5f5f !default; // alias of color-gray-800
 $cds-color-text-light: #707070 !default; // alias of color-gray-700
 $cds-color-text-link: #0060a9 !default; // alias of color-blue-600
 $cds-color-text-error: #d32029 !default; // alias of color-red-500
-$cds-color-text-success: #0060a9 !default; // alias of color-red-500
+$cds-color-text-success: #008000 !default; // alias of color-green-500
 $cds-font-size-1: 12px !default;
 $cds-font-size-2: 14px !default;
 $cds-font-size-3: 16px !default;
@@ -131,6 +131,8 @@ $cds-buttons-size-outline-primary-border-width: 1px !default;
 $cds-buttons-size-outline-secondary-border-width: 1px !default;
 $cds-buttons-radius: 3px !default; // alias of radius.md
 $cds-buttons-font-size: 16px !default; // alias of font.size.3
+$cds-dividers-color-border: #cccccc !default; // alias of color.gray-500
+$cds-dividers-size-border-width: 1px !default; // alias of size.border-width.thin
 $cds-notifications-color-alert-background: #ffcc00 !default; // alias of color.yellow-200
 $cds-notifications-color-alert-border: #fff8d2 !default; // alias of color.yellow-100
 $cds-notifications-color-alert-text: #333333 !default; // alias of color.gray-900
@@ -389,6 +391,14 @@ $cds-tokens: (
     ),
     'space': (
 
+    )
+  ),
+  'dividers': (
+    'color': (
+      'border': $cds-dividers-color-border
+    ),
+    'size': (
+      'border-width': $cds-dividers-size-border-width
     )
   ),
   'notifications': (
