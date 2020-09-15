@@ -9,7 +9,7 @@ export default {
   },
 };
 
-const Template = ({ onClick, label, className, icon }) => {
+const Template = ({ onClick, label, className }) => {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.innerText = label;
@@ -20,15 +20,9 @@ const Template = ({ onClick, label, className, icon }) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
+ label: 'Add to Cart',
  onClick: action('onClick'),
  className: 'cds-btn cds-btn--primary',
-};
-
-export const PrimaryAlternate = Template.bind({});
-PrimaryAlternate.args = {
- label: 'Place Your Order',
- onClick: action('onClick'),
- className: 'cds-btn cds-btn--primary-alternate',
 };
 
 export const Secondary = Template.bind({});
@@ -38,21 +32,19 @@ Secondary.args = {
  className: 'cds-btn cds-btn--secondary',
 };
 
-export const OutlinePrimary= Template.bind({});
-OutlinePrimary.args = {
+export const PrimaryOutline = Template.bind({});
+PrimaryOutline.args = {
  label: 'Add to Cart',
  onClick: action('onClick'),
  className: 'cds-btn cds-btn--outline-primary',
 };
 
-export const OutlineSecondary= Template.bind({});
-OutlineSecondary.args = {
- label: 'Add to Cart',
+export const PrimaryAlternate = Template.bind({});
+PrimaryAlternate.args = {
+ label: 'Place Your Order',
  onClick: action('onClick'),
- className: 'cds-btn cds-btn--outline-secondary',
+ className: 'cds-btn cds-btn--primary-alternate',
 };
-
-
 
 // const Template = ({ onClick, children }) => {
 //   const btn = document.createElement('button');
@@ -62,34 +54,34 @@ OutlineSecondary.args = {
 //   return btn;
 // };
 
-// export const Text = Template.bind({});
-// Text.args = {
-//   children: 'Button',
-//   onClick: action('onClick'),
-// };
+export const Text = Template.bind({});
+Text.args = {
+  children: 'Button',
+  onClick: action('onClick'),
+};
 
-// export const Emoji = Template.bind({});
-// Emoji.args = {
-//   children: '😀 😎 👍 💯',
-// };
+export const Emoji = Template.bind({});
+Emoji.args = {
+  children: '😀 😎 👍 💯',
+};
 
-// export const TextWithAction = () => {
-//   const btn = document.createElement('button');
-//   btn.type = 'button';
-//   btn.innerText = 'Trigger Action';
-//   btn.addEventListener('click', () => action('This was clicked')());
-//   return btn;
-// };
+export const TextWithAction = () => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.innerText = 'Trigger Action';
+  btn.addEventListener('click', () => action('This was clicked')());
+  return btn;
+};
 
-// TextWithAction.storyName = 'With an action';
-// TextWithAction.parameters = { notes: 'My notes on a button with emojis' };
+TextWithAction.storyName = 'With an action';
+TextWithAction.parameters = { notes: 'My notes on a button with emojis' };
 
-// export const ButtonWithLinkToAnotherStory = () => {
-//   const btn = document.createElement('button');
-//   btn.type = 'button';
-//   btn.innerText = 'Go to Welcome Story';
-//   btn.addEventListener('click', linkTo('example-introduction--page'));
-//   return btn;
-// };
+export const ButtonWithLinkToAnotherStory = () => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.innerText = 'Go to Welcome Story';
+  btn.addEventListener('click', linkTo('example-introduction--page'));
+  return btn;
+};
 
-// ButtonWithLinkToAnotherStory.storyName = 'button with link to another story';
+ButtonWithLinkToAnotherStory.storyName = 'button with link to another story';
