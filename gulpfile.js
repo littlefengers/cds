@@ -284,6 +284,7 @@ var createSassDocs = function (done)
 {
 	var options = {
 		dest: 'dist/sassdocs',
+		theme: 'herman'
 	  };
 	
 	// Make sure this feature is activated before running

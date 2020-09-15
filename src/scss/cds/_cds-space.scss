@@ -26,12 +26,10 @@
 //Space - Margin Mixins
 /// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @output margin-left: 16px;
-/// @example scss - Add md size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-left(md)
+///   @include cds-margin-left(md);
 ///  }
-///
 @mixin cds-margin-left($space-size, $important: null) {
   @if ($important == true) {
     margin-left: get-space($space-size) !important;
@@ -42,11 +40,10 @@
 
 /// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @example scss - Add sm size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-right(sm)
+///   @include cds-margin-right(md);
 ///  }
-///
 @mixin cds-margin-right($space-size, $important: null) {
   @if ($important == true) {
     margin-right: get-space($space-size) !important;
@@ -55,13 +52,12 @@
   }
 }
 
-/// @param {space} $space - Space Value
+/// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @example scss - Add sm size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-left(sm)
+///   @include cds-margin-top(md);
 ///  }
-///
 @mixin cds-margin-top($space-size, $important: null) {
   @if ($important == true) {
     margin-top: get-space($space-size) !important;
@@ -70,13 +66,12 @@
   }
 }
 
-/// @param {space} $space - Space Value
+/// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @example scss - Add sm size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-left(sm)
+///   @include cds-margin-bottom(md);
 ///  }
-///
 @mixin cds-margin-bottom($space-size, $important: null) {
   @if ($important == true) {
     margin-bottom: get-space($space-size) !important;
@@ -85,13 +80,12 @@
   }
 }
 
-/// @param {space} $space - Space Value
+/// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @example scss - Add sm size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-left(sm)
+///   @include cds-margin-y(md);
 ///  }
-///
 @mixin cds-margin-y($space-size, $important: null) {
   @if ($important == true) {
     margin-top: get-space($space-size) !important;
@@ -102,13 +96,12 @@
   }
 }
 
-/// @param {space} $space - Space Value
+/// @param {space} $space - Space value (check tokens for full list)
 /// @param {important} $important [false] - Add !important
-/// @example scss - Add sm size margin-left
+/// @example scss
 /// .foo {
-///   @include cds-margin-left(sm)
+///   @include cds-margin-x(md);
 ///  }
-///
 @mixin cds-margin-x($space-size, $important: null) {
   @if ($important == true) {
     margin-left: get-space($space-size) !important;
@@ -120,7 +113,12 @@
 }
 
 //Space - Padding Mixins
-
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-left(md);
+///  }
 @mixin cds-padding-left($space-size, $important: null) {
   @if ($important == true) {
     padding-left: get-space($space-size) !important;
@@ -128,6 +126,13 @@
     padding-left: get-space($space-size);
   }
 }
+
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-right(md);
+///  }
 @mixin cds-padding-right($space-size, $important: null) {
   @if ($important == true) {
     padding-right: get-space($space-size) !important;
@@ -136,6 +141,12 @@
   }
 }
 
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-top(md);
+///  }
 @mixin cds-padding-top($space-size, $important: null) {
   @if ($important == true) {
     padding-top: get-space($space-size) !important;
@@ -144,6 +155,12 @@
   }
 }
 
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-bottom(md);
+///  }
 @mixin cds-padding-bottom($space-size, $important: null) {
   @if ($important == true) {
     padding-bottom: get-space($space-size) !important;
@@ -152,6 +169,12 @@
   }
 }
 
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-y(md);
+///  }
 @mixin cds-padding-y($space-size, $important: null) {
   @if ($important == true) {
     padding-top: get-space($space-size) !important;
@@ -162,6 +185,12 @@
   }
 }
 
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-x(md);
+///  }
 @mixin cds-padding-x($space-size, $important: null) {
   @if ($important == true) {
     padding-left: get-space($space-size) !important;
@@ -174,6 +203,12 @@
 
 //Space - Inset
 
+/// @param {space} $space - Space value (check tokens for full list)
+/// @param {important} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-padding-inset(md);
+///  }
 @mixin cds-padding-inset($space-size, $important: null) {
     @if ($important == true) {
       padding: get-space-inset($space-size) !important;
@@ -184,11 +219,7 @@
 
 //Space Utilities
 
-
-
-
 $space-map: map-get-deep($cds-tokens, "space");
-
 @each $name, $space in $space-map {
   @if (type-of($space) != map) {
     //Padding
