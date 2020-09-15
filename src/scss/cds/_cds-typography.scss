@@ -117,3 +117,7 @@ $font-weight: map-get-deep($cds-tokens, "font", "weight");
 .cds-body-copy {
   @include cds-typeset("body-copy");
 }
+
+.label-outline.form-label.error{
+  font-weight: get-font-weight("bold");
+}

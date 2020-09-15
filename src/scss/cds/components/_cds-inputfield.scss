@@ -1,0 +1,133 @@
+/*
+inputfield
+*/
+.input-field-v2 .form-control {
+    @include cds-font-size("2");
+    @include cds-color-text("gray-900");
+}
+
+.input-field-v2 .input-outline {
+    height: map-get-deep($cds-tokens,"buttons","size","height");
+    transition: all 0.3s;
+    outline: 0;
+    box-shadow: none;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid cds-get-color("gray-600");
+    @include cds-radius("md");
+    box-sizing: border-box;
+}
+
+textarea.form-control {
+    @include cds-color-border("gray-600");
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    @include cds-font-size("2");
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid #ccc;
+    border-radius: 0px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.input-field-v2 .outerline {
+    position: relative;
+}
+
+.input-field-v2 .outerline textarea.form-control {
+    height: 100px;
+    resize: none;
+  }
+
+.input-field-v2 .input-outline .disabled {
+background-color: transparent;
+}
+
+.input-field-v2 .input-outline:focus:not([readonly]) {
+border: 2px solid cds-get-color("blue-500");
+}
+
+.input-field-v2 .input-outline:focus:not([readonly]) ~ label {
+    @include cds-color-text("blue-500");
+}
+
+.input-field-v2 .input-outline:focus:not([readonly]) ~ label:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+-webkit-transform: translate3d(0, -95%, 0);
+        transform: translate3d(0, -95%, 0);
+background: cds-get-color("white");
+padding-right: 5px; // can we add this to tokens
+padding-left: 5px; // can we add this to tokens
+margin-top: 0px; // can we add this to tokens
+@include cds-font-size("1");
+left: get-space("xs");
+z-index: 1;
+}
+
+.input-field-v2 .input-outline ~ label.active:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+-webkit-transform: translate3d(0, -95%, 0);
+        transform: translate3d(0, -95%, 0);
+background: cds-get-color("white");
+padding-right: 5px; // can we add this to tokens
+padding-left: 5px; // can we add this to tokens
+margin-top: 0px; // can we add this to tokens
+@include cds-font-size("1");
+left: get-space("xs");
+z-index: 1;
+}
+
+  .input-field-v2 .input-outline.valid:not([readonly]) {
+    border: 1px solid cds-get-color("gray-900");
+  }
+  
+  .input-field-v2 .input-outline.valid:not([readonly]) ~ label {
+    @include cds-color-text("gray-900");
+  }
+  
+
+.form-group.input-field-v2 {
+    margin-bottom: 20px; // can we add this to tokens
+}
+
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+textarea {
+    overflow: auto;
+}
+
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0px; // can we add this to tokens
+}
+
+.input-field-v2 label.label-outline {
+    @include cds-font-size("2");
+    position: absolute;
+    @include cds-margin-top("xxs");
+    top: 8.2px;
+    left: 0;
+    line-height: normal;
+    padding-left: 12.5px; // can we add this to tokens
+    transition: 0.2s ease-out;
+    cursor: text;
+    @include cds-color-text("gray-800");
+    z-index: 0;
+}
+
+.form-group label {
+    margin-bottom: 5px;  // can we add this to tokens
+  }
