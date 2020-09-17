@@ -63,10 +63,12 @@ $color-text-map: map-get-deep($cds-tokens, "color", "text"); //TODO refactor to 
   }
 }
 
+//remove if not needed
 .label-outline.form-label.active {
   @include cds-color-text("red-500", true);
 }
 
+//remove if not needed
 .label-outline.form-label {
   @include cds-color-text("gray-900");
 }
