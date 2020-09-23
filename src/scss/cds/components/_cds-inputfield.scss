@@ -62,7 +62,16 @@ textarea.form-control {
     @include cds-color-text("blue-500");
 }
 
-.input-field-v2 .input-outline:focus:not([readonly]) ~ label:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+
+.input-field-v2 .input-outline ~ label.error {
+    @include cds-color-text("red-500");
+}
+
+.input-field-v2 .input-outline.error {
+    border: 2px solid cds-get-color("red-500");
+}
+
+.input-field-v2 .input-outline:focus:not([readonly]) ~ label:not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
     -webkit-transform: translate3d(0, -95%, 0);
             transform: translate3d(0, -95%, 0);
     background: cds-get-color("white");
@@ -74,7 +83,7 @@ textarea.form-control {
     z-index: 1;
 }
 
-.input-field-v2 .input-outline ~ label.active:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+.input-field-v2 .input-outline ~ label.active:not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
     -webkit-transform: translate3d(0, -95%, 0);
             transform: translate3d(0, -95%, 0);
     background: cds-get-color("white");
@@ -135,13 +144,11 @@ textarea {
     margin-bottom: 5px;  // can we add this to tokens
   }
 
-.body-copy-error {
-    @include cds-font-size("3");
-    @include cds-font-line-height("sm");
-    @include cds-color-text("red-500");
-    font-weight: 600; // can we add this to tokens
+/*
+.input-field-v2 .input-outline.error:not([readonly]) {
+    border: 2px solid cds-get-color("red-500");
   }
 
-.error {
-    @include cds-color-text("red-500");
-  }
+.input-field-v2 .input-outline.error ~ label{
+    @include cds-color-text("red-500"); 
+}*/

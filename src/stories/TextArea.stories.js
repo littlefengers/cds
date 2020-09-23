@@ -29,22 +29,6 @@ export function TextArea(){
     textAreaElement.name = "textarea-name";
     textAreaElement.maxLength = "180";
     textAreaElement.style = "height:auto;";
-
-    $(textAreaElement).on('input',function(){
-        character_count('#textarea-character-count', '#textarea-id');
-    });
-
-    $(textAreaElement).on('blur',function(){
-        javasript:void(0);
-    });
-
-    $(textAreaElement).focusin(function() {
-        $(labelElement).addClass("active");
-    }).focusout(function() {
-        if($(this).val().length === 0) {
-            $(labelElement).removeClass("active");
-        }
-    });
  
     labelElement.htmlFor = "textarea-id";
     labelElement.id = "inputLabel"; 
@@ -64,6 +48,35 @@ export function TextArea(){
     countDivElement.id = "textarea-character-count-container";
     countDivElement.appendChild(countSpanElement);
     countDivElement.appendChild(charSpanElement);
+
+    $(textAreaElement).on('input',function(){
+        character_count('#textarea-character-count', '#textarea-id');
+    });
+
+    $(textAreaElement).on('blur',function(){
+        javasript:void(0);
+    });
+
+    $(textAreaElement).on("focusin", function() {
+        $(labelElement).addClass("active");
+        $('#textarea-character-count').text("180");
+           $('#textarea-character-count').removeClass("pl2-ns cds-body-copy cds-u-font-bold cds-u-color-text-error");
+           $('#remaining').text(" Characters Remaining");
+
+    }).on("focusout", function() {
+        if($(this).val().length === 0) {
+           $(labelElement).addClass("error");
+           $(this).addClass("error");
+           $('#textarea-character-count').text("Error Message");
+           $('#textarea-character-count').addClass("pl2-ns cds-body-copy cds-u-font-bold cds-u-color-text-error");
+           $('#remaining').text("");
+
+        }else{
+            $(labelElement).removeClass("error");
+            $(this).removeClass("error");
+            $(labelElement).addClass("active");
+        }
+    });
 
     outlineDivElement.appendChild(textAreaElement);
     outlineDivElement.appendChild(labelElement);
