@@ -29,18 +29,30 @@ function inputFieldTemplate(inputId,label) {
     labelElement.className = "fw4-ns input-field-v2 label-outline";
     labelElement.innerHTML = label;
 
-    $(inputElement).focusin(function () {
+    const errorSpanElement = document.createElement("span");
+    errorSpanElement.innerText = "";    
+
+
+    $(inputElement).on("focusin",function () {
         $(labelElement).addClass("active");
-    }).focusout(function () {
+        $(errorSpanElement).removeClass("pl2-ns cds-body-copy cds-u-font-bold cds-u-color-text-error");
+        $(errorSpanElement).text("");
+    }).on("focusout",function () {
         if ($(this).val().length === 0) {
-            //$(labelElement).removeClass("active");
+            $(labelElement).addClass("error");
+            $(inputElement).addClass("error");
+            $(errorSpanElement).text("Error Message")
+            $(errorSpanElement).addClass("pl2-ns cds-body-copy cds-u-font-bold cds-u-color-text-error");
+           } else{
+            $(labelElement).removeClass("error");
+            $(this).removeClass("error");
             $(labelElement).addClass("active");
-            $(inputElement).addClass("error body-copy-error");
            }
     });
 
     outlineDivElement.appendChild(inputElement);
     outlineDivElement.appendChild(labelElement);
+    outlineDivElement.appendChild(errorSpanElement);
 
     parentDivElement.appendChild(outlineDivElement);
 

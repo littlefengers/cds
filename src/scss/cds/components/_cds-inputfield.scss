@@ -62,6 +62,13 @@ textarea.form-control {
     @include cds-color-text("blue-500");
 }
 
+.input-field-v2 .input-outline.active {
+    border: 2px solid cds-get-color("blue-500");
+} 
+
+.input-field-v2 .input-outline.active ~ label {
+    @include cds-color-text("blue-500");
+}
 
 .input-field-v2 .input-outline ~ label.error {
     @include cds-color-text("red-500");
