@@ -291,7 +291,7 @@ var createSassDocs = function (done)
 	if (!settings.tokens) return done();
 
 	return src(paths.styles.input)
-	  .pipe(sassdoc(options));
+	  .pipe(sassdoc());
 }
 
 //Clears cache

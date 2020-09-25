@@ -1,10 +1,45 @@
-//TODO NEED TO add docs
+// ----------------------------------------------------------------------
+////
+/// @group Media Queries
+////
 
+/// @return {Number} - Breakpoint Value
+/// @param {Number} $breakpoint - Breakpoint Key
+/// @example scss SCSS
+///   @media (min-width: cds-get-bp("md"))
+///   {
+///    .foo {
+///     font-size: 12px
+///     }
+///   }
+/// @example css Rendered
+///   @media (min-width: 668px)
+///   {
+///    .foo {
+///     font-size: 12px
+///     }
+///   }
 @function cds-get-bp($breakpoint)
 {
     @return map-get-deep($cds-tokens,"bp", #{$breakpoint});
 }
 
+/// @param {Number} $breakpoint - Breakpoint Key
+/// @example scss
+/// .foo {
+///    @include cds-mq-min-sm
+///     {
+///         font-size: $cds-font-size-3;
+///         line-height: $cds-font-line-height-md;
+///     }
+///  }
+/// @example css Rendered
+///  @media (min-width: 320px) {
+///     .foo {
+///        font-size: 28px;
+///        line-height: 32px;
+///     }
+///   }
 @mixin cds-mq-min-sm
 {
     @media (min-width: cds-get-bp("sm"))
@@ -13,6 +48,22 @@
     }
 }
 
+/// @param {Number} $breakpoint - Breakpoint Key
+/// @example scss
+/// .foo {
+///    @include cds-mq-min-md
+///     {
+///         font-size: $cds-font-size-3;
+///         line-height: $cds-font-line-height-md;
+///     }
+///  }
+/// @example css Rendered
+///  @media (min-width: 668px) {
+///     .foo {
+///        font-size: 28px;
+///        line-height: 32px;
+///     }
+///   }
 @mixin cds-mq-min-md
 {
     @media (min-width: cds-get-bp("md"))
@@ -21,6 +72,22 @@
     }
 }
 
+/// @param {Number} $breakpoint - Breakpoint Key
+/// @example scss
+/// .foo {
+///    @include cds-mq-min-lg
+///     {
+///         font-size: $cds-font-size-3;
+///         line-height: $cds-font-line-height-md;
+///     }
+///  }
+/// @example css Rendered
+///  @media (min-width: 769px) {
+///     .foo {
+///        font-size: 28px;
+///        line-height: 32px;
+///     }
+///   }
 @mixin cds-mq-min-lg
 {
     @media (min-width: cds-get-bp("lg"))

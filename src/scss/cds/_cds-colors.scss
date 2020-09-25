@@ -1,6 +1,17 @@
-//Color Functions
+// ----------------------------------------------------------------------
+////
+/// @group Color
+////
 
-
+/// @return {color} - Color Value
+/// @example scss SCSS
+/// .foo {
+///   color: cds-get-color("costco-blue")
+/// }
+/// @example css Rendered
+/// .foo {
+///   color: #005dab;
+/// }
 @function cds-get-color($variant, $attribute: null) {
   @if ($attribute == null) {
     @return map-get-deep($cds-tokens, "color", #{$variant});
@@ -11,27 +22,63 @@
 
 //Color Mixins
 
-@mixin cds-color-bg($color, $important: null, $attribute: null) {
+/// @param {String} $variant - Variant Key (check tokens for full list)
+/// @param {String} $attribute [null] - Attribute.
+/// If attribute param is not used, then it is a base key (contextless).
+/// @param {Bool} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-color-text(costco-blue);
+///  }
+/// @example css Rendered
+/// .foo {
+///   color: #005dab;
+/// }
+@mixin cds-color-text($variant, $important: null, $attribute: null) {
   @if ($important == true) {
-    background-color: cds-get-color($color, $attribute) !important;
+    color: cds-get-color($variant, $attribute) !important;
   } @else {
-    background-color: cds-get-color($color, $attribute);
+    color: cds-get-color($variant, $attribute);
   }
 }
 
-@mixin cds-color-border($color, $important: null, $attribute: null) {
+/// @param {String} $variant - Variant Key (check tokens for full list)
+/// @param {String} $attribute [null] - Attribute.
+/// If attribute param is not used, then it is a base key (contextless).
+/// @param {Bool} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-color-bg(costco-blue);
+///  }
+/// @example css Rendered
+/// .foo {
+///   background-color: #005dab;
+/// }
+@mixin cds-color-bg($variant, $important: null, $attribute: null) {
   @if ($important == true) {
-    border-color: cds-get-color($color, $attribute) !important;
+    background-color: cds-get-color($variant, $attribute) !important;
   } @else {
-    border-color: cds-get-color($color, $attribute);
+    background-color: cds-get-color($variant, $attribute);
   }
 }
 
-@mixin cds-color-text($color, $important: null, $attribute: null) {
+/// @param {String} $variant - Variant Key (check tokens for full list)
+/// @param {String} $attribute [null] - Attribute.
+/// If attribute param is not used, then it is a base key (contextless).
+/// @param {Bool} $important [false] - Add !important
+/// @example scss
+/// .foo {
+///   @include cds-color-border(costco-blue);
+///  }
+/// @example css Rendered
+/// .foo {
+///   border-color: #005dab;
+/// }
+@mixin cds-color-border($variant, $important: null, $attribute: null) {
   @if ($important == true) {
-    color: cds-get-color($color, $attribute) !important;
+    border-color: cds-get-color($variant, $attribute) !important;
   } @else {
-    color: cds-get-color($color, $attribute);
+    border-color: cds-get-color($variant, $attribute);
   }
 }
 
@@ -39,7 +86,11 @@
 //TODO Add to docs
 
 $color-map: map-get-deep($cds-tokens, "color");
-$color-text-map: map-get-deep($cds-tokens, "color", "text"); //TODO refactor to not have to use this.
+$color-text-map: map-get-deep(
+  $cds-tokens,
+  "color",
+  "text"
+); //TODO refactor to not have to use this.
 
 @each $name, $color in $color-map {
   @if (type-of($color) != map) {
