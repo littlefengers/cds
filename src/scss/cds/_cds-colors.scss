@@ -92,6 +92,8 @@ $color-text-map: map-get-deep(
   "text"
 ); //TODO refactor to not have to use this.
 
+
+
 @each $name, $color in $color-map {
   @if (type-of($color) != map) {
     .cds-u-color-text-#{$name} {

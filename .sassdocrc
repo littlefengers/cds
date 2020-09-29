@@ -1,1 +1,6 @@
-dest: 'dist/sassdocs'
+dest: 'dist/'
+theme: herman
+herman:
+    extraLinks:
+        - name: 'CSS Utilities'
+          url: 'css-utilities.html'

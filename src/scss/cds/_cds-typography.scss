@@ -89,9 +89,10 @@
 /// }
 @mixin cds-font-weight($weight, $important: false) {
   @if $important == true {
-  font-weight: get-font-weight($weight) !important;
-} @else {
-  font-weight: get-font-weight($weight);
+    font-weight: get-font-weight($weight) !important;
+  } @else {
+    font-weight: get-font-weight($weight);
+}
 }
 
 /// @param {string} $line-height
