@@ -1,3 +1,19 @@
+// ----------------------------------------------------------------------
+////
+/// @group Border
+////
+
+
+/// @param {String} $radius - Radius Key
+/// @return {Number} - Radius Value
+/// @example scss
+/// .foo {
+///   border-radius: get-radius(md);
+///  }
+/// @example css Rendered
+/// .foo {
+///   border-radius: 3px;
+///   }
 @function get-radius($variant, $attribute: null) {
   @if ($attribute == null) {
     @return map-get-deep($cds-tokens, "radius", #{$variant});
@@ -6,6 +22,16 @@
   }
 }
 
+/// @param {String} $border-width - Border-width Key
+/// @return {String} - Border-width Value
+/// @example scss
+/// .foo {
+///   border-width: get-border-width(medium);
+/// }
+/// @example css Rendered
+/// .foo {
+///   border-width: 2px;
+/// }
 @function get-border-width($variant, $attribute: null) {
   @if ($attribute == null) {
     @return map-get-deep($cds-tokens, "size","border-width", #{$variant});
@@ -15,13 +41,37 @@
 }
 
 //Radius
-
-@mixin cds-radius($radius) {
-  border-radius: get-radius($radius);
+/// @param {String} $radius - Radius Key
+/// @example scss SCSS
+/// .foo {
+///   @include cds-radius(medium);
+/// }
+/// @example css Rendered
+/// .foo {
+///   border-radius: 2px;
+/// }
+@mixin cds-radius($radius, $important: null) {
+  @if ($important == true) {
+  border-radius: get-radius($radius) !important;
+  }@else {
+    border-radius: get-radius($radius);
+  }
 }
 
 //Border Width
-
-@mixin cds-border-width($border-width) {
-  border-width: get-border-width($border-width);
+/// @param {String} $border-width - Border-width Key
+/// @example scss SCSS
+/// .foo {
+///   @include border-width(medium);
+/// }
+/// @example css Rendered
+/// .foo {
+///   border-width: 2px;
+/// }
+@mixin cds-border-width($border-width, $important: null) {
+  @if ($important == true) {
+    border-width: get-border-width($border-width) !important;
+  }@else {
+    border-width: get-border-width($border-width);
+  }
 }

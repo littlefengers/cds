@@ -4,8 +4,6 @@
 
 USAGE
 
-
-
 */
 
 
@@ -13,23 +11,25 @@ USAGE
 {
   cursor: pointer;
   vertical-align: middle;
-  @include cds-padding-left(md);
-  @include cds-padding-right(md);
+  @include cds-padding-x('md');
   margin:0;
   text-decoration: none;
   display:inline-block;
   width: 100%;
-  height: map-get-deep($cds-tokens,"buttons","size","height");
-  font-size: map-get-deep($cds-tokens,"buttons","font","size");
+  height: $cds-buttons-size-height;
+  font-size: $cds-buttons-font-size;
   font-style:normal;
   text-align:center;
-  border-radius: map-get-deep($cds-tokens,"buttons","radius");
+  border-radius: $cds-buttons-radius;
   //TODO: Transitions
   // transition: background 250ms ease-in-out,
   //             transform 150ms ease;
   // -webkit-appearance: none;
   // -moz-appearance: none;
 }
+
+//Super over engineered button componenet
+//Shoould we we rid of the warning sfor the checks?
 
 @mixin cds-button-variant($variant) 
 {
