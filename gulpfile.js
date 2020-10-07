@@ -11,7 +11,6 @@ var settings = {
 	styles: true,
 	svgs: false,
 	docs: true,
-	tokens: true,
 	reload: true,
 	sassdocs: true
 };
@@ -41,10 +40,6 @@ var paths = {
 		input: 'src/docs/**/*',
 		output: 'dist/'
 	},
-	designtokens: {
-		input: '../costco-design-tokens/build/**/*',
-		output: 'src/'
-	}, 
 	reload: './dist/'
 };
 
@@ -211,7 +206,8 @@ var buildStyles = function (done) {
 	return src(paths.styles.input)
 		.pipe(sass({
 			outputStyle: 'expanded',
-			sourceComments: true
+			sourceComments: true,
+			includePaths: ['node_modules']
 		}))
 		// .pipe(prefix({
 		// 	cascade: true,
@@ -268,27 +264,10 @@ var copyDocs = function (done) {
 
 };
 
-// Copy static files into output folder
-var copyTokens = function (done) {
-
-	// Make sure this feature is activated before running
-	if (!settings.tokens) return done();
-
-	// Copy static files
-	return src(paths.designtokens.input)
-		.pipe(dest(paths.designtokens.output));
-
-};
-
 var createSassDocs = function (done)
 {
-	var options = {
-		dest: 'dist/sassdocs',
-		theme: 'herman'
-	  };
-	
 	// Make sure this feature is activated before running
-	if (!settings.tokens) return done();
+	if (!settings.sassdocs) return done();
 
 	return src(paths.styles.input)
 	  .pipe(sassdoc());
@@ -351,10 +330,9 @@ exports.default = series(
 		buildScripts,
 		// lintScripts,
 		buildStyles,
-		// copyTokens,
 		// buildSVGs,
-		copyDocs
-	)
+		createSassDocs,
+	),copyDocs
 );
 
 // Watch and reload
@@ -364,10 +342,6 @@ exports.watch = series(
 	startServer,
 	watchSource
 );
-
-//This copyies from a different folder
-//This needs to be changed
-exports.copyTokens = series(copyTokens);
 
 
 exports.sassDocs = series(

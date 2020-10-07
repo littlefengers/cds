@@ -84,15 +84,9 @@
 
 //Color Utilities
 //TODO Add to docs
+//Not really sure if these should be in here, but these classes are in here for prototyping
 
 $color-map: map-get-deep($cds-tokens, "color");
-$color-text-map: map-get-deep(
-  $cds-tokens,
-  "color",
-  "text"
-); //TODO refactor to not have to use this.
-
-
 
 @each $name, $color in $color-map {
   @if (type-of($color) != map) {
@@ -108,10 +102,22 @@ $color-text-map: map-get-deep(
       @include cds-color-border($name, true);
     }
   } @else if (type-of($color) == map) {
-    @each $inner-name, $inner-color in $color-text-map {
-      .cds-u-color-text-#{$inner-name} {
-        @include cds-color-text($inner-name, true, $name);
+    //This is iterating one levels deeper to get more context-based tokens
+    $inner-map: map-get-deep($cds-tokens, "color", #{$name});
+    @each $inner-name, $inner-color in $inner-map{
+      @if ($name == "text")
+      {
+        .cds-u-color-text-#{$inner-name} {
+          @include cds-color-text($inner-name, true, $name);
+        }
       }
+      @if ($name == "border")
+      {
+        .cds-u-color-border-#{$inner-name} {
+          @include cds-color-border($inner-name, true, $name);
+        }
+      }
+
     }
   }
 }

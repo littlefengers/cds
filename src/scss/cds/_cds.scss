@@ -5,7 +5,8 @@
 //----------------------------------*/
 
 //Tokens
-@import '_cds-variables.scss';
+@import 'cds-tokens/dist/scss/_cds-variables.scss';
+
 
 //Functions
 @import 'functions/_deepmap.scss';
@@ -16,7 +17,6 @@
 @import '_cds-space.scss';
 @import '_cds-border.scss';
 @import '_cds-typography.scss';
-
 
 //Components
 
