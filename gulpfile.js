@@ -9,10 +9,10 @@ var settings = {
 	scripts: true,
 	polyfills: false,
 	styles: true,
-	svgs: false,
+	svgs: true,
 	docs: true,
-	tokens: true,
-	reload: true
+	reload: true,
+	sassdocs: true
 };
 
 
@@ -40,10 +40,6 @@ var paths = {
 		input: 'src/docs/**/*',
 		output: 'dist/'
 	},
-	designtokens: {
-		input: '../costco-design-tokens/build/**/*',
-		output: 'src/'
-	}, 
 	reload: './dist/'
 };
 
@@ -105,6 +101,10 @@ var browserSync = require('browser-sync');
 
 //Adding gulp cache
 var cache = require('gulp-cache');
+
+//SassDocs
+var sassdoc = require('sassdoc');
+
 
 /**
  * Gulp Tasks
@@ -206,7 +206,8 @@ var buildStyles = function (done) {
 	return src(paths.styles.input)
 		.pipe(sass({
 			outputStyle: 'expanded',
-			sourceComments: true
+			sourceComments: true,
+			includePaths: ['node_modules']
 		}))
 		// .pipe(prefix({
 		// 	cascade: true,
@@ -263,17 +264,14 @@ var copyDocs = function (done) {
 
 };
 
-// Copy static files into output folder
-var copyTokens = function (done) {
-
+var createSassDocs = function (done)
+{
 	// Make sure this feature is activated before running
-	if (!settings.tokens) return done();
+	if (!settings.sassdocs) return done();
 
-	// Copy static files
-	return src(paths.designtokens.input)
-		.pipe(dest(paths.designtokens.output));
-
-};
+	return src(paths.styles.input)
+	  .pipe(sassdoc());
+}
 
 //Clears cache
 
@@ -314,6 +312,10 @@ var watchSource = function (done) {
 	done();
 };
 
+var watchSassDoc = function (done) {
+	watch(paths.input, series(createSassDocs, reloadBrowser));
+	done();
+};
 
 /**
  * Export Tasks
@@ -328,10 +330,9 @@ exports.default = series(
 		buildScripts,
 		// lintScripts,
 		buildStyles,
-		// copyTokens,
-		// buildSVGs,
-		copyDocs
-	)
+		buildSVGs,
+		createSassDocs,
+	),copyDocs
 );
 
 // Watch and reload
@@ -342,6 +343,9 @@ exports.watch = series(
 	watchSource
 );
 
-//This copyies from a different folder
-//This needs to be changed
-exports.copyTokens = series(copyTokens);
+
+exports.sassDocs = series(
+	createSassDocs,
+	startServer,
+	watchSassDoc
+);

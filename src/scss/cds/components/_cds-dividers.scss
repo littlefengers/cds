@@ -1,0 +1,15 @@
+//TODO
+//Add mixins for including dividers using :before & :after?
+//Will have to review with additional use cases
+//Maybe add default margins?
+
+.cds-horizontal-divider
+{
+    border-top: $cds-dividers-size-border-width solid $cds-dividers-color-border;
+}
+
+.cds-vertical-divider
+{
+    display: inline-block;
+    border-left: $cds-dividers-size-border-width solid $cds-dividers-color-border;
+}

@@ -1,5 +1,5 @@
 {
-	"name": "costco-componenent-test",
+	"name": "CDS",
 	"version": "0.0.1",
 	"description": "Costco helper utilities using CDS Tokens",
 	"main": "./dist/docs",
@@ -32,9 +32,12 @@
 		"gulp-terser": "^1.2.0",
 		"jshint": "^2.11.0",
 		"jshint-stylish": "^2.2.1",
-		"lazypipe": "^1.0.2"
+		"lazypipe": "^1.0.2",
+		"sassdoc": "^2.7.3"
 	},
 	"dependencies": {
+		"cds-tokens": "0.0.2",
+		"sassdoc-theme-herman": "^3.2.0",
 		"tachyons-sass": "^4.9.5"
 	}
 }

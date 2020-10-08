@@ -1,0 +1,48 @@
+// ordered
+
+@mixin cds-list-ordered() {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-left: -2.5em;
+}
+
+.cds-list-ordered {
+  @include cds-list-ordered;
+
+  &--inside {
+    margin-left: -1.5em;
+    margin-left: -1em;
+  }
+}
+
+// unordered
+@mixin cds-list-unordered {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  // If we want ot add some spacing
+  // & > li + li {
+  //     @include cds-margin-top('xs');
+  // }
+
+  & > li {
+    &::before {
+      content: "\2022";
+      position: relative;
+      margin-left: -1em;
+      margin: $cds-list-space-margin;
+    }
+  }
+}
+
+.cds-list-unordered {
+  @include cds-list-unordered();
+  &--inside {
+    & > li {
+      &::before {
+        margin-left: 0;
+      }
+    }
+  }
+}

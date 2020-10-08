@@ -1,17 +1,54 @@
+// ----------------------------------------------------------------------
+////
+/// @group Typography
+////
+
+
 //Typography Functions
 
-@function get-font-size($font-size)
+/// @return {font-size} - Font Size in PX
+/// @param {number} $font-size - Font Size Key
+/// @example scss SCSS
+/// .foo {
+///   font-size: cds-get-font-size(3);
+/// }
+/// @example css Rendered
+/// .foo {
+///   font-size: 16px;
+/// }
+@function cds-get-font-size($font-size)
 {
   @return map-get-deep($cds-tokens,"font","size", #{$font-size});
 };
 
-//TODO Add option to return multiple instead of pixel
+//TODO Add option to return multiple measurements
 
-@function get-font-line-height($line-height)
+
+/// @return {line-height} - Line height in PX
+/// @param {string} $line-height - Line Height Key
+/// @example scss SCSS
+/// .foo {
+///   line-height: cds-get-font-line-height(md)
+/// }
+/// @example css Rendered
+/// .foo {
+///   line-height: 24px
+/// }
+@function cds-get-font-line-height($line-height)
 {
   @return map-get-deep($cds-tokens,"font","line-height", #{$line-height});
 };
 
+/// @return {font-weight} - Font weight value
+/// @param {string} $line-height - Line Height Key
+/// @example scss SCSS
+/// .foo {
+///   font-weight: get-font-weight(bold);
+/// }
+/// @example css Rendered
+/// .foo {
+///   font-weight: 700;
+/// }
 @function get-font-weight($weight)
 {
   @return map-get-deep($cds-tokens,"font","weight", #{$weight});
@@ -20,30 +57,86 @@
 
 //Typography Mixins
 
-@mixin cds-u-font-size($font-size, $important: false) {
+/// @param {number} $font-size
+/// @param {bool} $important [false] - Add !important
+///
+/// @example scss
+/// .foo {
+///   @include cds-get-font-size(3)
+///  }
+/// @example css Rendered
+/// .foo {
+///   font-size: 16px;
+/// }
+@mixin cds-font-size($font-size, $important: false) {
   @if $important == true {
-    font-size: get-font-size($font-size) !important;
+    font-size: cds-get-font-size($font-size) !important;
   } @else {
-    font-size: get-font-size($font-size);
+    font-size: cds-get-font-size($font-size);
   }
 }
 
-@mixin cds-u-font-weight($weight) {
-  font-weight: get-font-weight($weight);
+/// @param {string} $font-weight
+/// @param {bool} $important [false] - Add !important
+///
+/// @example scss
+/// .foo {
+///   @include cds-font-weight(bold);
+///  }
+/// @example css Rendered
+/// .foo {
+///   font-weight: 700;
+/// }
+@mixin cds-font-weight($weight, $important: false) {
+  @if $important == true {
+    font-weight: get-font-weight($weight) !important;
+  } @else {
+    font-weight: get-font-weight($weight);
+}
 }
 
-@mixin cds-u-font-line-height($line-height, $important: false) {
+/// @param {string} $line-height
+/// @param {bool} $important [false] - Add !important
+///
+/// @example scss
+/// .foo {
+///   @include cds-get-font-line-height(md)
+///  }
+/// @example css Rendered
+/// .foo {
+///   line-height: 24px;
+/// }
+@mixin cds-font-line-height($line-height, $important: false) {
   @if $important == true{
-	line-height: get-font-line-height($line-height) !important;
+	line-height: cds-get-font-line-height($line-height) !important;
   } @else {
-	line-height: get-font-line-height($line-height);
+	line-height: cds-get-font-line-height($line-height);
   }	
 }
 
-@mixin cds-u-typeset($type) {
+
+/// @param {string} $line-height
+///
+/// @example scss
+/// .foo {
+///   @include cds-typeset(t3)
+///  }
+/// @example css Rendered
+/// .foo {
+///   font-size: 16px;
+///   line-height: 24px;
+/// }
+///  Have to add the extra "." to show the @media
+/// .@media (min-width: 769px) {
+///   .foo{
+///    font-size: 18px;
+///    line-height: 24px;
+///  }
+/// }
+@mixin cds-typeset($type) {
   font-size: map-get-deep($cds-tokens, "type","font","#{$type}-mobile","size");
   line-height: map-get-deep($cds-tokens, "type","font","#{$type}-mobile","line-height");
-  @include cds-u-mq-min-lg
+  @include cds-mq-min-lg
   {
     font-size: map-get-deep($cds-tokens, "type","font","#{$type}-desktop","size");
     line-height: map-get-deep($cds-tokens, "type","font","#{$type}-desktop","line-height");
@@ -58,7 +151,7 @@ $font-size: map-get-deep($cds-tokens, "font", "size");
 @each $name, $size  in $font-size { 
   @if (type-of($size) != map) {
       .cds-font-size-#{$name}{
-        @include cds-u-font-size(#{$name}, true);
+        @include cds-font-size(#{$name}, true);
     }   
   }
 }
@@ -69,7 +162,7 @@ $line-height: map-get-deep($cds-tokens, "font", "line-height");
 @each $name, $height in $line-height {
   @if (type-of($height) != map) {
     .cds-line-height-#{$name}{
-      @include cds-u-font-line-height(#{$name}, true);
+      @include cds-font-line-height(#{$name}, true);
     }
   }
 }
@@ -80,40 +173,49 @@ $font-weight: map-get-deep($cds-tokens, "font", "weight");
 @each $name, $weight in $font-weight {
   @if (type-of($weight) != map) {
     .cds-u-font-#{$name}{
-      @include cds-u-font-weight(#{$name});
+      @include cds-font-weight(#{$name});
     }
   }
 }
 
 //Font Size and line-height
+
+/// 
 .cds-t1 {
-  @include cds-u-typeset("t1");
+  @include cds-typeset("t1");
 }
 
+///
 .cds-t2 {
-  @include cds-u-typeset("t2");
+  @include cds-typeset("t2");
 }
 
+///
 .cds-t3 {
-  @include cds-u-typeset("t3");
+  @include cds-typeset("t3");
 }
 
+///
 .cds-t4 {
-  @include cds-u-typeset("t4");
+  @include cds-typeset("t4");
 }
 
+///
 .cds-t5 {
-  @include cds-u-typeset("t5");
+  @include cds-typeset("t5");
 }
 
+///
 .cds-t6 {
-  @include cds-u-typeset("t6");
+  @include cds-typeset("t6");
 }
 
+///
 .cds-t7 {
-  @include cds-u-typeset("t7");
+  @include cds-typeset("t7");
 }
 
+///
 .cds-body-copy {
-  @include cds-u-typeset("body-copy");
+  @include cds-typeset("body-copy");
 }

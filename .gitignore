@@ -1,7 +1,8 @@
 cache
 logs
 images
-/dist
+dist
+sassdoc
 
 build
 
