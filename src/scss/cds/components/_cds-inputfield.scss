@@ -49,6 +49,10 @@ textarea.form-control {
     resize: none;
   }
 
+.input-field-v2 .outerline .fl-ns {
+    padding: 5px 0px 5px 15px;
+}
+
   //remove if not needed
 .input-field-v2 .input-outline .disabled {
     background-color: transparent;
@@ -159,3 +163,18 @@ textarea {
 .input-field-v2 .input-outline.error ~ label{
     @include cds-color-text("red-500"); 
 }*/
+ 
+.get-help:after {
+    content: "?";
+    background-color: #3071a9;
+    border-radius: 50%;
+    padding: 0px 0px 6px 6px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 3px;
+    float: left;
+}
