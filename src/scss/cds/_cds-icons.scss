@@ -1,0 +1,58 @@
+
+// Get icon sizes
+
+@function get-icon-size($size)
+{
+    @return map-get-deep($cds-tokens, "size", "icon-svg", #{$size});
+}
+
+
+.cds-icon
+{
+display: inline-block;
+/* Use the current text color as the icon’s fill color. */
+fill: currentColor;
+/* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+width: 1em;
+height: 1em;
+/* The default vertical-align is `baseline`, which leaves a few pixels of space below the icon. Using `center` prevents this. For icons shown alongside text, you may want to use a more precise value, e.g. `vertical-align: -4px` or `vertical-align: -0.15em`. */
+vertical-align: middle;
+/* Paths and strokes that overflow the viewBox can show in IE11. */
+overflow: hidden;
+}
+
+
+//Icon sizes
+$size-icon-svg: map-get-deep($cds-tokens, "size", "icon-svg");
+
+@each $name, $size in $size-icon-svg {
+  @if (type-of($size) != map) {
+    .cds-icon--#{$name}{
+      width: get-icon-size(#{$name});
+      height: get-icon-size(#{$name});
+    }
+  }
+}
+
+//One off size for icons in buttons per Sketch file.
+//TODO: Add to design tokens?
+
+.cds-icon--btn
+{
+  width: 18px !important;
+  height: 18px !important;
+}
+
+  /**
+ * Visually hidden accessible label
+ * Using styles that do not hide the text in screen readers
+ * We use !important because we should not apply other styles to this hidden alternative text
+ */
+.access-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+  
