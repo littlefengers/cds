@@ -49,49 +49,72 @@ textarea.form-control {
     resize: none;
   }
 
+.input-field-v2 .outerline .fl-ns {
+    padding: 5px 0px 5px 15px;
+}
+
+  //remove if not needed
 .input-field-v2 .input-outline .disabled {
-background-color: transparent;
+    background-color: transparent;
 }
 
 .input-field-v2 .input-outline:focus:not([readonly]) {
-border: 2px solid cds-get-color("blue-500");
+    border: 2px solid cds-get-color("blue-500");
 }
 
 .input-field-v2 .input-outline:focus:not([readonly]) ~ label {
     @include cds-color-text("blue-500");
 }
 
-.input-field-v2 .input-outline:focus:not([readonly]) ~ label:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
--webkit-transform: translate3d(0, -95%, 0);
-        transform: translate3d(0, -95%, 0);
-background: cds-get-color("white");
-padding-right: 5px; // can we add this to tokens
-padding-left: 5px; // can we add this to tokens
-margin-top: 0px; // can we add this to tokens
-@include cds-font-size("1");
-left: get-space("xs");
-z-index: 1;
+.input-field-v2 .input-outline.active {
+    border: 2px solid cds-get-color("blue-500");
+} 
+
+.input-field-v2 .input-outline.active ~ label {
+    @include cds-color-text("blue-500");
 }
 
-.input-field-v2 .input-outline ~ label.active:not(.error):not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
--webkit-transform: translate3d(0, -95%, 0);
-        transform: translate3d(0, -95%, 0);
-background: cds-get-color("white");
-padding-right: 5px; // can we add this to tokens
-padding-left: 5px; // can we add this to tokens
-margin-top: 0px; // can we add this to tokens
-@include cds-font-size("1");
-left: get-space("xs");
-z-index: 1;
+.input-field-v2 .input-outline ~ label.error {
+    @include cds-color-text("red-500");
 }
 
-  .input-field-v2 .input-outline.valid:not([readonly]) {
+.input-field-v2 .input-outline.error {
+    border: 2px solid cds-get-color("red-500");
+}
+
+.input-field-v2 .input-outline:focus:not([readonly]) ~ label:not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+    -webkit-transform: translate3d(0, -95%, 0);
+            transform: translate3d(0, -95%, 0);
+    background: cds-get-color("white");
+    padding-right: 5px; // can we add this to tokens
+    padding-left: 5px; // can we add this to tokens
+    margin-top: 0px; // can we add this to tokens
+    @include cds-font-size("1");
+    left: get-space("xs");
+    z-index: 1;
+}
+
+.input-field-v2 .input-outline ~ label.active:not(.t3-style-bold-error):not(.t5-style-bold-error):not(.t5-style-error):not(.t7-style-bold-error):not(.body-copy-style-bold-error) {
+    -webkit-transform: translate3d(0, -95%, 0);
+            transform: translate3d(0, -95%, 0);
+    background: cds-get-color("white");
+    padding-right: 5px; // can we add this to tokens
+    padding-left: 5px; // can we add this to tokens
+    margin-top: 0px; // can we add this to tokens
+    @include cds-font-size("1");
+    left: get-space("xs");
+    z-index: 1;
+}
+
+//remove if not needed
+.input-field-v2 .input-outline.valid:not([readonly]) {
     border: 1px solid cds-get-color("gray-900");
-  }
-  
-  .input-field-v2 .input-outline.valid:not([readonly]) ~ label {
+}
+
+//remove if not needed
+.input-field-v2 .input-outline.valid:not([readonly]) ~ label {
     @include cds-color-text("gray-900");
-  }
+}
   
 
 .form-group.input-field-v2 {
@@ -131,3 +154,28 @@ textarea {
 .form-group label {
     margin-bottom: 5px;  // can we add this to tokens
   }
+
+/*
+.input-field-v2 .input-outline.error:not([readonly]) {
+    border: 2px solid cds-get-color("red-500");
+  }
+
+.input-field-v2 .input-outline.error ~ label{
+    @include cds-color-text("red-500"); 
+}*/
+ 
+.get-help:after {
+    content: "?";
+    @include cds-color-bg("blue-500");
+    border-radius: 50%;
+    padding: 0px 0px 6px 6px;
+    @include cds-color-text("white");
+    font-weight: bold;
+    @include cds-font-size("2");
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: 3px;
+    float: left;
+}
+

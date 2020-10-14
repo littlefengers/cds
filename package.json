@@ -1,5 +1,5 @@
 {
-  "name": "costco-componenent-test",
+  "name": "CDS",
   "version": "0.0.1",
   "description": "Costco helper utilities using CDS Tokens",
   "main": "./dist/docs",
@@ -19,7 +19,7 @@
     "@storybook/html": "^6.0.18",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -38,10 +38,13 @@
     "jshint": "^2.11.0",
     "jshint-stylish": "^2.2.1",
     "lazypipe": "^1.0.2",
-    "react-is": "^16.13.1"
+    "react-is": "^16.13.1",
+    "sassdoc": "^2.7.3"
   },
   "dependencies": {
     "jquery": "^3.5.1",
+    "cds-tokens": "0.0.1",
+    "sassdoc-theme-herman": "^3.2.0",
     "tachyons-sass": "^4.9.5"
   },
   "scripts": {
