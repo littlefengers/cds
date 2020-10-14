@@ -9,7 +9,7 @@ var settings = {
 	scripts: true,
 	polyfills: false,
 	styles: true,
-	svgs: false,
+	svgs: true,
 	docs: true,
 	reload: true,
 	sassdocs: true
@@ -330,7 +330,7 @@ exports.default = series(
 		buildScripts,
 		// lintScripts,
 		buildStyles,
-		// buildSVGs,
+		buildSVGs,
 		createSassDocs,
 	),copyDocs
 );
