@@ -118,19 +118,22 @@ function inputFieldTemplate(variant) {
             }
 
     }
+    
+    parentDivElement.appendChild(outlineDivElement);
+    parentDivElement.appendChild(spanElement);
 
-    outlineDivElement.appendChild(spanElement);
 
+    if(variant === "Input with Help Text & Help Link - Error" || variant === "Input with Help Link - Error"){
+        spanElement.innerText = "Error Message";
+        $(spanElement).addClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
+        const newLineElement = document.createElement("br");
+        parentDivElement.appendChild(newLineElement);
+    }
+    
     if(variant === "Input with Help Text & Help Link" || variant === "Input with Help Text & Help Link - On Focus" 
-            || variant === "Input with Help Text & Help Link - Completed" || variant === "Input with Help Text & Help Link - Error"){
-        if(variant === "Input with Help Text & Help Link - Error"){
-            spanElement.innerText = "Error Message";
-            $(spanElement).addClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
-        }else{
-            spanElement.innerText = "Help Text";
-            $(spanElement).addClass("pl2-ns cds-body-copy cds-u-color-text-light");
-        } 
-        
+    || variant === "Input with Help Text & Help Link - Completed"){
+        spanElement.innerText = "Help Text";
+        $(spanElement).addClass("pl2-ns cds-body-copy cds-u-color-text-light");
 
         const anchorElement = document.createElement("a");
         anchorElement.href = "url";
@@ -140,30 +143,20 @@ function inputFieldTemplate(variant) {
         const newLineElement = document.createElement("br");
         outlineDivElement.appendChild(newLineElement);
 
-        outlineDivElement.appendChild(anchorElement);
+        parentDivElement.appendChild(anchorElement);
 
     }else if(variant === "Input with Help Link" || variant === "Input with Help Link - On Focus" 
-            || variant === "Input with Help Link - Completed" || variant === "Input with Help Link - Error"
-            || variant === "Input with Icon & Help Link" || variant === "Input with Icon & Help Link - On Focus" || variant === "Input with Icon & Help Link - Completed" || variant === "Input with Icon & Help Link - Error"){
+        || variant === "Input with Help Link - Completed" || variant === "Input with Help Link - Error"
+        || variant === "Input with Icon & Help Link" || variant === "Input with Icon & Help Link - On Focus" 
+        || variant === "Input with Icon & Help Link - Completed" || variant === "Input with Icon & Help Link - Error" || variant === "Input with Help Text & Help Link - Error"){
 
-        if(variant === "Input with Help Link - Error"){
-            spanElement.innerText = "Error Message";
-            $(spanElement).addClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
-
-            const newLineElement = document.createElement("br");
-            outlineDivElement.appendChild(newLineElement);
-
-        }
         const anchorElement = document.createElement("a");
         anchorElement.href = "url";
         anchorElement.innerText = "Help Link"; 
         $(anchorElement).addClass("pl2-ns cds-body-copy cds-u-color-text-link");
 
-        outlineDivElement.appendChild(anchorElement);
-    }
-
-
-    parentDivElement.appendChild(outlineDivElement);
+        parentDivElement.appendChild(anchorElement);
+        }
 
     return parentDivElement;
 
