@@ -3,15 +3,13 @@
 //Will have to review with additional use cases
 //Maybe add default margins?
 
-hr, .cds-horizontal-divider
+.cds-horizontal-divider
 {
-    border-top: map-get-deep($cds-tokens,"dividers","size","border-width") solid map-get-deep($cds-tokens,"dividers","color","border")
+    border-top: $cds-dividers-size-border-width solid $cds-dividers-color-border;
 }
 
 .cds-vertical-divider
 {
     display: inline-block;
-    border-left: map-get-deep($cds-tokens,"dividers","size","border-width") solid map-get-deep($cds-tokens,"dividers","color","border");
+    border-left: $cds-dividers-size-border-width solid $cds-dividers-color-border;
 }
-
-
