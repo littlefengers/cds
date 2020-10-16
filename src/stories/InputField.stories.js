@@ -67,8 +67,7 @@ function inputFieldTemplate(variant) {
     }
 
     if(variant === "Input with Help Text" || variant === "Input with Help Text - On Focus" || variant === "Input with Help Text - Completed"
-    || variant === "Input with Icon & Help Text" || variant === "Input with Icon & Help Text - On Focus" || variant === "Input with Icon & Help Text - Completed" 
-            || variant === "Input with Icon & Help Text - Error"){
+    || variant === "Input with Icon & Help Text" || variant === "Input with Icon & Help Text - On Focus" || variant === "Input with Icon & Help Text - Completed"){
         spanElement.innerText = "Help Text"; 
         $(spanElement).addClass("pl2-ns cds-body-copy cds-u-color-text-light");
 
@@ -106,17 +105,19 @@ function inputFieldTemplate(variant) {
     if(variant === "Input with Icon" || variant === "Input with Icon - On Focus" || variant === "Input with Icon - Completed" || variant === "Input with Icon - Error"
         || variant === "Input with Icon & Help Text" || variant === "Input with Icon & Help Text - On Focus" || variant === "Input with Icon & Help Text - Completed" || variant === "Input with Icon & Help Text - Error"
         || variant === "Input with Icon & Help Link" || variant === "Input with Icon & Help Link - On Focus" || variant === "Input with Icon & Help Link - Completed" || variant === "Input with Icon & Help Link - Error"){
-        
-            const iconElement = document.createElement("div");
-            iconElement.className = "h1-ns w1-ns get-help fl-ns";
-            $(inputElement).addClass("w-90-ns fl-ns");
-            outlineDivElement.appendChild(iconElement);
-           
-            if(variant === "Input with Icon - Error" || variant === "Input with Icon & Help Text - Error" || variant === "Input with Icon & Help Link - Error"){
-                spanElement.innerText = "Error Message";
-                $(spanElement).addClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
-            }
 
+            var svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svgElement.setAttribute("version", "1.1");
+            var useElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            svgElement.setAttribute("viewBox", "0 0 24 24");
+            svgElement.setAttribute("class", "cds-icon tooltip");
+ 
+            useElement.setAttribute("d","M11.867 2.001c-0.001 0-0.001 0-0.002 0-5.522 0.075-9.939 4.612-9.864 10.134s4.612 9.938 10.134 9.864c5.521-0.075 9.937-4.611 9.864-10.132s-4.609-9.939-10.132-9.866zM13.453 17.282c-0.079 0.193-0.19 0.361-0.332 0.503s-0.31 0.253-0.503 0.333c-0.193 0.079-0.398 0.119-0.613 0.119s-0.421-0.040-0.614-0.119c-0.193-0.079-0.361-0.19-0.503-0.333s-0.253-0.309-0.332-0.503-0.119-0.397-0.119-0.613c0-0.216 0.040-0.42 0.119-0.613s0.19-0.361 0.332-0.503c0.142-0.142 0.31-0.253 0.503-0.332s0.398-0.119 0.614-0.119c0.215 0 0.42 0.040 0.613 0.119s0.36 0.19 0.503 0.332c0.142 0.142 0.253 0.309 0.332 0.503s0.119 0.398 0.119 0.613c0 0.215-0.040 0.42-0.119 0.613zM15.958 10.015c-0.069 0.267-0.185 0.531-0.349 0.792s-0.381 0.526-0.648 0.792c-0.267 0.267-0.605 0.559-1.014 0.877-0.262 0.205-0.437 0.403-0.528 0.597s-0.137 0.386-0.137 0.579v0.494h-2.555v-0.75c0-0.341 0.045-0.63 0.136-0.869s0.244-0.46 0.46-0.665c0.318-0.307 0.61-0.573 0.877-0.801 0.266-0.227 0.497-0.44 0.689-0.639s0.344-0.386 0.452-0.562 0.162-0.361 0.162-0.554c0-0.375-0.117-0.667-0.349-0.877-0.233-0.21-0.525-0.315-0.877-0.315-0.534 0-0.94 0.147-1.218 0.443s-0.434 0.653-0.469 1.073l-2.65-0.003c0.125-1.354 0.594-2.289 1.355-2.919s1.738-0.945 2.931-0.945c0.522 0 1.014 0.071 1.474 0.213s0.866 0.355 1.218 0.639c0.351 0.284 0.63 0.636 0.835 1.056s0.307 0.903 0.307 1.448c0.001 0.331-0.033 0.629-0.101 0.896z");
+            svgElement.append(useElement);
+
+            $(inputElement).addClass("w-90-ns fl-ns");
+
+            outlineDivElement.appendChild(svgElement);
     }
     
     parentDivElement.appendChild(outlineDivElement);
@@ -141,7 +142,7 @@ function inputFieldTemplate(variant) {
         $(anchorElement).addClass("pl2-ns cds-body-copy cds-u-color-text-link");
 
         const newLineElement = document.createElement("br");
-        outlineDivElement.appendChild(newLineElement);
+        parentDivElement.appendChild(newLineElement);
 
         parentDivElement.appendChild(anchorElement);
 
@@ -150,6 +151,10 @@ function inputFieldTemplate(variant) {
         || variant === "Input with Icon & Help Link" || variant === "Input with Icon & Help Link - On Focus" 
         || variant === "Input with Icon & Help Link - Completed" || variant === "Input with Icon & Help Link - Error" || variant === "Input with Help Text & Help Link - Error"){
 
+        if(variant === "Input with Icon & Help Link - Error"){
+            const newLineElement = document.createElement("br");
+            parentDivElement.appendChild(newLineElement);
+        }
         const anchorElement = document.createElement("a");
         anchorElement.href = "url";
         anchorElement.innerText = "Help Link"; 
