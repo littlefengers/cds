@@ -179,7 +179,18 @@ textarea {
     float: left;
 }
 
-.tooltip {
-    fill: #3071a9;
+.tooltip-icon {
+    fill: cds-get-color("blue-500");
     padding: 12px 0px 12px 9px;
 }
+
+ .input-field-v2 .outerline button {
+    height: map-get-deep($cds-tokens,"buttons","size","height");
+    width: 50px;
+    font-family: "Helvetica Neue";
+    letter-spacing: 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
