@@ -194,3 +194,16 @@ textarea {
     top: 0;
     right: 0;
   }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+  }
+  
+  legend {
+    padding: 0;
+    margin-bottom: 20px;
+    border: 0;
+  }

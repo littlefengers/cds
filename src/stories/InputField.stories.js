@@ -33,6 +33,8 @@ function inputFieldTemplate(variant) {
     const labelElement = document.createElement("label");
 
     inputElement.className = "form-control input-outline";
+    inputElement.required = "true";
+    inputElement.setAttribute("aria-required", "true");
     inputElement.type = "text";
     inputElement.id = "fieldName";
     inputElement.name = "fieldName";
@@ -88,14 +90,21 @@ function inputFieldTemplate(variant) {
         $(inputElement).removeClass("error");
         $(labelElement).addClass("active");
         $(spanElement).removeClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
-        $(spanElement).text("");
+        if(variant === "Input with Help Text" || variant === "Input with Icon & Help Text" || variant === "Input with Help Text & Help Link")
+        {
+            $(spanElement).text("Help Text");
+            $(spanElement).addClass("pl2-ns cds-body-copy cds-u-color-text-light");
+        }else{
+            $(spanElement).text("");
+        }
     }
 
     function inputFieldFocusOut() {
         if ($(inputElement).val().length === 0) {
             $(labelElement).addClass("error");
             $(inputElement).addClass("error");
-            $(spanElement).text("Error Message")
+            $(spanElement).text("Error Message");
+            $(spanElement).removeClass("pl2-ns cds-body-copy cds-u-color-text-light");
             $(spanElement).addClass("pl2-ns cds-t7 cds-u-font-bold cds-u-color-text-error");
            } else{
             $(labelElement).removeClass("error");
@@ -176,11 +185,12 @@ function inputFieldTemplate(variant) {
 
  
 function formTemplate({ variant }) {
-
-    const headerElement = document.createElement('h4');
-    headerElement.innerHTML = 'Input Field';
-    //line height is supposed to be 1.1, margin top/bottom should have been 10px, 
-    headerElement.className = 'cds-t4 dark-gray mv2-m fw4 sans-serif';
+    const fieldElement = document.createElement("fieldset");
+    // fieldElement.style = "display: none;";
+     
+     const legendElement = document.createElement("legend");
+     legendElement.innerText = "Input Field";
+     //legendElement.className = 'cds-t4 dark-gray mv2-m fw4 sans-serif';
 
     const parentDivElement = document.createElement("div");
     const formElement = document.createElement("form");
@@ -189,9 +199,13 @@ function formTemplate({ variant }) {
     formElement.action = "#";
     formElement.noValidate = "noValidate";
 
-    formElement.appendChild(inputFieldTemplate(variant));
+    fieldElement.appendChild(legendElement);
+    fieldElement.appendChild(inputFieldTemplate(variant));
 
-    parentDivElement.appendChild(headerElement);
+    formElement.appendChild(fieldElement);
+
+
+    //parentDivElement.appendChild(headerElement);
     parentDivElement.appendChild(formElement);
 
     return parentDivElement;
