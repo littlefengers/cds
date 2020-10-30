@@ -207,3 +207,80 @@ textarea {
     margin-bottom: 20px;
     border: 0;
   }
+
+.quantity-selector-v2 input {
+    min-width: 0;
+    width: 56px;
+    height: map-get-deep($cds-tokens,"buttons","size","height");
+    text-align: center;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid cds-get-color("gray-600");
+    padding: 0;
+  }
+
+  .quantity-selector-v2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .quantity-selector {
+    height: 92px;
+    width: 110px;
+  }
+
+  .quantity-selector .quantity-selector-v2 button{
+    box-sizing: border-box;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid cds-get-color("gray-600");
+    @include cds-color-text("blue-600");
+    width: 34px;
+    height: auto;
+    @include cds-color-bg("gray-200");
+    @include cds-font-size("4");
+  }
+
+  .quantity-selector  button[name=button] {
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .quantity-selector input{
+    min-width: 0;
+    width: 44px;
+    height: map-get-deep($cds-tokens,"buttons","size","height");
+    text-align: center;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid cds-get-color("gray-600");
+    padding: 0;
+  }
+
+  .quantity {
+    height: 16px;
+    width: 48px;
+    @include cds-color-text("gray-900");
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @include cds-font-size("2");
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .quantity-selector-v2 button[name=minusQty] {
+    border-radius: 3px 0px 0px 3px;
+  }
+
+  .quantity-selector-v2 button[name=plusQty] {
+    border-radius: 0px 3px 3px 0px;
+  }
+
+  .quantity-selector-v2 button {
+    box-sizing: border-box;
+    border: map-get-deep($cds-tokens,"buttons","size","outline-primary","border-width") solid cds-get-color("gray-600");
+    @include cds-color-text("blue-600");
+    width: 34px;
+    height: map-get-deep($cds-tokens,"buttons","size","height");
+    @include cds-color-bg("gray-200");
+    @include cds-font-size("4");
+  }

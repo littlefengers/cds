@@ -39,3 +39,11 @@ StatusBar.args = {
     child1: 'Title',
     child2: 'Used for informations about order status and similar containers',
 };
+
+StatusBar.parameters = {
+  docs: {
+      source: {
+          code: '<div class="status-bar-container"><div><div><b class="cds-u-font-bold">Title</b></div><div><span>Used for informations about order status and similar containers</span></div></div></div>'
+      }
+  }
+}

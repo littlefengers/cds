@@ -47,18 +47,21 @@ function TextAreaTemplate({ variant}){
         charSpanElement.innerHTML = " Characters Remaining";
 
     if(variant === "On Focus"){ 
+        // Textarea OnFocus
         textAreaElement.className = "form-control input-outline active";
         $(textAreaElement).val("Input Text Value");
         labelElement.className = "fw4-ns input-field-v2 label-outline active";
         countSpanElement.innerHTML = "164";
     }
     else if(variant === "Completed"){ 
+        // Textarea On Complete
         textAreaElement.className = "form-control input-outline";
         $(textAreaElement).val("Input Text Value");
         labelElement.className = "fw4-ns input-field-v2 label-outline active";
         countSpanElement.innerHTML = "164";
     }
     else if(variant === "Error"){
+        // Textarea On Error
         textAreaElement.className = "form-control input-outline error";
         labelElement.className = "fw4-ns input-field-v2 label-outline active error";
         countSpanElement.innerHTML = "Error Message";
