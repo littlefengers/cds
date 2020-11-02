@@ -5,7 +5,7 @@ export default {
     title: 'Typography',
   };
 
-
+// T1
 export function t1() {
     var headerElement = document.createElement('h1');
     headerElement.className = 'cds-t1';
@@ -13,6 +13,7 @@ export function t1() {
     return headerElement;
 };
 
+// T2
 export function t2() {
     var parentDiv = document.createElement('div');
 
@@ -40,6 +41,7 @@ export function t2() {
     return parentDiv;
 };
 
+// T3
 export function t3() {
     var parentDiv = document.createElement('div');
 
@@ -72,6 +74,7 @@ export function t3() {
     return parentDiv;
 };
 
+// T4
 export function t4() {
     var parentDiv = document.createElement('div');
 
@@ -95,6 +98,7 @@ export function t4() {
     return parentDiv;
 };
 
+// T5
 export function t5() {
     var parentDiv = document.createElement('div');
 
@@ -133,7 +137,7 @@ export function t5() {
     return parentDiv;
 };
 
-
+// T6
 export function t6() {
     var parentDiv = document.createElement('div');
 
@@ -177,7 +181,7 @@ export function t6() {
     return parentDiv;
 };
 
-
+// T7
 export function t7() {
     var parentDiv = document.createElement('div');
 
@@ -201,7 +205,7 @@ export function t7() {
     return parentDiv;
 };
 
-
+// BodyCopy
 export function BodyCopy() {
     var parentDiv = document.createElement('div');
 
