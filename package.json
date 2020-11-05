@@ -54,7 +54,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "storybook-to-ghpages --remote=GitHub",
     "dsm-storybook:publish": "dsm-storybook publish",
     "dsm-storybook:preview": "dsm-storybook preview"
   }

@@ -7,70 +7,47 @@ export default {
   title: 'Button',
   argTypes: {
     label: { control: 'text' },
-  }
+    variation: {
+      control: {
+        type: 'select',
+        options: ['cds-btn--primary','cds-btn--secondary','cds-btn--outline-primary','cds-btn--primary-alternate']
+      }
+  }}
 };
 
-const Template = ({ onClick, label, className }) => {
+const Template = ({ onClick, label, variation }) => {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.innerText = label;
-  btn.className = className;
+  btn.className = 'cds-btn ' + variation;
   btn.addEventListener('click', onClick);
   return btn;
 };
-
-
-// export const Primary = ( label ) => {
-//   const btn = document.createElement('button');
-//   btn.type = 'button';
-//   btn.innerText = label
-//   btn.className = "cds-btn cds-btn--primary"
-//   btn.addEventListener('click', action('onClick'));
-//   return btn;
-// };
-
-
-// Primary.args = {
-//   label: 'hello world'
-// }
-
-
-// Primary.story = {
-//   decorators: [withDsm],
-//   parameters: {
-//     'in-dsm': { id: '5e8230abdf84e2a27d2c579c' }
-//   }
-// }
-
 
 export const Primary = Template.bind({});
 Primary.args = {
  label: 'Add to Cart',
  onClick: action('onClick'),
- className: 'cds-btn cds-btn--primary',
+ variation: 'cds-btn--primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
  label: 'Cancel',
  onClick: action('onClick'),
- className: 'cds-btn cds-btn--secondary',
+ variation: 'cds-btn--secondary',
 };
 
 export const PrimaryOutline = Template.bind({});
 PrimaryOutline.args = {
  label: 'Add to Cart',
  onClick: action('onClick'),
- className: 'cds-btn cds-btn--outline-primary',
+ variation: 'cds-btn--outline-primary',
 };
 
 export const PrimaryAlternate = Template.bind({});
 PrimaryAlternate.args = {
  label: 'Place Your Order',
  onClick: action('onClick'),
- className: 'cds-btn cds-btn--primary-alternate',
+ variation: 'cds-btn--primary-alternate',
 };
-
-
-
-PrimaryAlternate.storyName = 'button with link to another story';
