@@ -1,0 +1,8 @@
+{
+  "authToken": "SJN633lYP",
+  "dsmHost": "costco.invisionapp.com",
+  "organization": "costco-wholesale",
+  "outputDir": ".dsm",
+  "storyPath": "src/**/*.stories.js",
+  "defaultDocsTab": true
+}
