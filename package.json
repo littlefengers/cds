@@ -1,5 +1,5 @@
 {
-	"name": "CDS",
+	"name": "cds",
 	"version": "0.0.1",
 	"description": "Costco helper utilities using CDS Tokens",
 	"main": "./dist/docs",
@@ -36,7 +36,7 @@
 		"sassdoc": "^2.7.3"
 	},
 	"dependencies": {
-		"cds-tokens": "0.0.3",
+		"cds-tokens": "0.0.4",
 		"sassdoc-theme-herman": "^3.2.0",
 		"tachyons-sass": "^4.9.5"
 	}
