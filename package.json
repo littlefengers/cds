@@ -1,5 +1,5 @@
 {
-  "name": "CDS",
+  "name": "cds",
   "version": "0.0.1",
   "description": "Costco helper utilities using CDS Tokens",
   "main": "./dist/docs",
@@ -46,7 +46,7 @@
   "dependencies": {
     "@invisionapp/dsm-storybook": "0.0.137",
     "@storybook/addon-options": "^5.3.21",
-    "cds-tokens": "0.0.2",
+    "cds-tokens": "0.0.4",
     "jquery": "^3.5.1",
     "sassdoc-theme-herman": "^3.2.0",
     "tachyons-sass": "^4.9.5"
